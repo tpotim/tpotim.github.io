@@ -42,7 +42,7 @@ angular.module('ngViewExample', ['ngRoute', 'ngAnimate'])
     //var routeChangeStartOff = $rootScope.$on('$routeChangeStart', routeChangeStart);  
     //var routeChangeSuccessOff = $rootScope.$on('$routeChangeSuccess', routeChangeSuccess);  
 
-     function routeChangeStart(event) {  
+     /*function routeChangeStart(event) {  
       debugger;
         $log.log('routeChangeStart');  
         $log.log(arguments);  
@@ -52,7 +52,7 @@ angular.module('ngViewExample', ['ngRoute', 'ngAnimate'])
       debugger;
         $log.log('routeChangeSuccess');  
         $log.log(arguments);  
-    }
+    }*/
   
       
   

@@ -1,0 +1,38 @@
+
+
+Extra small devices Phones (<768px) 	
+Small devices Tablets      (≥768px) 	      
+Medium devices Desktops    (≥992px) 	    
+Large devices Desktops     (≥1200px)
+ 
+
+ 
+
+<link rel="stylesheet" type="text/css" href="scripts/slick/slick.css"/>
+  <script type="text/javascript" src="scripts/slick/slick.js"></script>
+
+
+article : sm md 保留，左侧缩小
+
+
+public  主体内容占12格
+article 右下角图片垂直摆放
+
+按钮右移
+
+TODO:
+
+
+
+修改内容：
+ 
+show sidebar on medium devices,
+hide sidebar on small devices.
+ 
+
+
+
+
+
+
+

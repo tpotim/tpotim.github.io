@@ -1,0 +1,33 @@
+IoC
+http://martinfowler.com/articles/injection.html
+
+DI
+http://en.wikipedia.org/wiki/Dependency_injection
+
+
+
+injector
+https://docs.angularjs.org/api/ng/function/angular.injector
+
+https://docs.angularjs.org/guide/di
+
+
+ng router 
+http://www.tuicool.com/articles/mMzAvy
+
+
+[AngularJS系列(4)] provider们~ 
+http://hellobug.github.io/blog/angularjs-providers/
+
+
+
+http://www.html5tricks.com/demo/jiaoben1892/index.html
+
+
+http://www.v2ex.com/
+
+CSS3 Transitions, Transforms和Animation使用简介与应用展示
+http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms%E5%92%8Canimation%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%BA%94%E7%94%A8%E5%B1%95%E7%A4%BA/
+
+
+https://scotch.io/tutorials
