@@ -1,3 +1,6 @@
+html{
+  font-size:24px;
+}
 .view-animate-container {
   position:relative;
   height:200px!important;
