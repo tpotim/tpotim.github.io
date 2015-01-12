@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <!-- CSS -->
+    <!-- load bootstrap (bootswatch version) -->
+    <link rel="stylesheet" href="../scripts/bootstrap3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+     
+    <!-- JS -->
+    <!-- load angular, ngRoute, ngAnimate -->
+    <script src="../scripts/angularjs/angular.min.js"></script>
+    <script src="../scripts/angularjs/angular-route.min.js"></script>
+    <script src="../scripts/angularjs/angular-animate.min.js"></script>
+    <script src="app.js"></script>
+ 
+</head>
+ 
+<!-- apply our angular app -->
+<body ng-app="animateApp" ng-controller="indexCtrl">
+ 
+    <!-- inject our views using ng-view -->
+    <!-- each angular controller applies a different class here -->
+    <div class="page {{ pageClass }} {{ forwardOrBack }}" ng-view></div>
+         
+</body>
+</html>

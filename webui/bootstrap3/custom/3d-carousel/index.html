@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>3D Carousel</title>
+<style rel="stylesheet" type="text/css" media="screen">
+body {
+    background: #0f0f0f;
+    color: #eee;
+    padding-top: 50px;
+}
+.roundabout-holder {
+    padding: 0;
+    margin: 0 auto;
+    height: 400px;
+    width: 600px;
+}
+
+.roundabout-moveable-item {
+    height: 400px;
+    width: 320px;
+    cursor: pointer;
+    border: 1px solid black;
+    display: block;
+}
+
+.roundabout-moveable-item img {
+    height: 100%;
+    width: 100%;
+}
+
+.roundabout-in-focus {
+    cursor: auto;
+}
+
+#threeDcarousel-descriptions {
+    list-style: none;
+    display: block;
+    width: 850px;
+    margin: 25px auto;
+    padding: 0;
+}
+
+#threeDcarousel-descriptions li {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+#threeDcarousel-descriptions li.current {
+    display: block;
+}
+
+#threeDcarousel-controls {
+    max-width: 900px;
+    width: auto;
+    margin: 25px auto;
+    overflow: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#threeDcarousel-controls span {
+    width: 100px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    background: #333;
+}
+
+#threeDcarousel-controls .current {
+    background: #600;
+    color: ;
+    border-color: #400;
+}
+
+#threeDcarousel img{
+    border: 1px solid black !important;
+}
+</style>
+<link rel="stylesheet" href="../../scripts/bootstrap3/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../scripts/bootstrap3/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="../../scripts/jquery/js/jquery.min.js"></script>
+<script src="../../scripts/bootstrap3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../scripts/roundabout/jquery.roundabout.min.js">
+</script>
+
+</head>
+<body>
+<div id="threeDcarousel">
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide1.png" alt="" class="slide" tabindex=1 />
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide2.png" alt="" class="slide" tabindex=2 />
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide3.png" alt="" class="slide" tabindex=3 />
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide4.png" alt="" class="slide" tabindex=4 />
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide5.png" alt="" class="slide" tabindex=5 />
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide6.png" alt="" class="slide" tabindex=6 />
+    <img src="http://www.joezimjs.com/demos/roundabout-demo/slide7.png" alt="" class="slide" tabindex=7 />
+</div>
+<ul id="threeDcarousel-descriptions">
+    <li class="desc current">Slide 1 Description Goes Here</li>
+    <li class="desc">Slide 2 Description Goes Here</li>
+    <li class="desc">Slide 3 Description Goes Here</li>
+    <li class="desc">Slide 4 Description Goes Here</li>
+    <li class="desc">Slide 5 Description Goes Here</li>
+    <li class="desc">Slide 6 Description Goes Here</li>
+    <li class="desc">Slide 7 Description Goes Here</li>
+</ul>
+<div id="threeDcarousel-controls">
+    <span class="control current">Show Me<br>Slide 1</span>
+    <span class="control">Show Me<br>Slide 2</span>
+    <span class="control">Show Me<br>Slide 3</span>
+    <span class="control">Show Me<br>Slide 4</span>
+    <span class="control">Show Me<br>Slide 5</span>
+    <span class="control">Show Me<br>Slide 6</span>
+    <span class="control">Show Me<br>Slide 7</span>
+</div>
+
+<script type="text/javascript">
+
+(function($) {
+    var $descriptions = $('#threeDcarousel-descriptions').children('li'), 
+    $controls = $('#threeDcarousel-controls').find('span'), 
+    $threeDcarousel = $('#threeDcarousel')
+    .roundabout({childSelector: "img",minOpacity: 1,autoplay: true,autoplayDuration: 5000,autoplayPauseOnHover: true})
+    .on('focus', 'img', function() {
+        console.log('focus');
+        var slideNum = $threeDcarousel.roundabout("getChildInFocus");
+        
+        $descriptions.add($controls).removeClass('current');
+        $($descriptions.get(slideNum)).addClass('current');
+        $($controls.get(slideNum)).addClass('current');
+    });
+    
+    $controls.on('click dblclick', function() {
+        var slideNum = -1, 
+        i = 0, len = $controls.length;
+        
+        for (; i < len; i++) {
+            if (this === $controls.get(i)) {
+                slideNum = i;
+                break;
+            }
+        }
+        
+        if (slideNum >= 0) {
+            $controls.removeClass('current');
+            $(this).addClass('current');
+            $threeDcarousel.roundabout('animateToChild', slideNum);
+        }
+    });
+}(jQuery));
+</script>
+</body>
+</html>

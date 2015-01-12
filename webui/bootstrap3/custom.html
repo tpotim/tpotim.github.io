@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>TPO小站UI框架-自定义</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="scripts/bootstrap3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="scripts/bootstrap3/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/framework.css">
+	<script src="scripts/jquery/js/jquery.min.js"></script>
+	<script src="scripts/bootstrap3/js/bootstrap.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<!--[if lt IE 9]>
+	<script src="scripts/functions/html5shiv.min.js"></script>
+	<script src="scripts/functions/respond.js"></script>
+	<![endif]-->
+	<style>
+	.bs-examples a{
+		width: 80%;
+	}
+	@media (max-width: 768px){
+		.bs-examples a{
+			width:100%;
+		}
+	}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">TPO小站UI框架</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="index.html">开始使用</a>
+					</li>
+					<li>
+						<a href="css.html">CSS布局</a>
+					</li>
+					<li>
+						<a href="components.html">页面控件</a>
+					</li>
+					<li>
+						<a href="plugin.html">JS插件</a>
+					</li>
+					<li class="active">
+						<a href="custom.html">自定义</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							前端组
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="mailto:cate.zhao@tpo.com">Cate.zhao</a>
+							</li>
+							<li>
+								<a href="mailto:liang.fang@tpo.com">Liang.fang</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9" role="main">
+				<div class="bs-docs-section">
+
+					<div class="row bs-examples">
+						<div class="col-xs-12">
+							<h2 id="custom-theme">主题</h2>
+							<p>加载可选的主题，获得增强的视觉体验。</p>
+							<a class="thumbnail" href="./custom/theme/index.html" target="_blank">
+								<img src="./custom/screenshots/theme.jpg" alt=""></a>
+						</div>
+					</div>
+
+					<div class="row bs-examples">
+						<div class="col-xs-12">
+							<h2 id="custom-jumbotron">超大屏幕</h2>
+							<p>
+								Build around the jumbotron with a navbar and some basic grid columns.
+							</p>
+							<a class="thumbnail" href="./custom/jumbotron/index.html" target="_blank">
+								<img src="./custom/screenshots/jumbotron.jpg" alt=""></a>
+						</div>
+					</div>
+
+					<div class="row bs-examples">
+						<div class="col-xs-12">
+							<h2 id="custom-carousel">轮播</h2>
+							<h3 id="bootstrap-carousel">Carousel</h3>
+							<p>
+								Customize the navbar and carousel, then add some new components.
+							</p>
+							<a class="thumbnail" href="./custom/carousel/index.html" target="_blank">
+								<img src="./custom/screenshots/carousel.jpg" alt=""></a>
+							<h3 id="3D-carousel">3D carousel</h3>
+							<p>
+								Using roundabout.js
+							</p>
+							<a class="thumbnail" href="./custom/3d-carousel/index.html" target="_blank">
+								<img src="./custom/screenshots/3d-carousel.jpg" alt=""></a>
+							<h3 id="variable-width-carousel">Variable width carousel</h3>
+							<p>
+								Using slick.js.
+							</p>
+							<a class="thumbnail" href="./custom/slick/variable-width.html" target="_blank">
+								<img src="./custom/screenshots/variable-width-carousel.jpg" alt=""></a>
+							<h3 id="autoplay-carousel">Autoplay carousel</h3>
+							<p>
+								Using slick.js.
+							</p>
+							<a class="thumbnail" href="./custom/slick/autoplay.html" target="_blank">
+								<img src="./custom/screenshots/autoplay-carousel.jpg" alt=""></a>
+							
+						</div>
+					</div>
+
+					<div class="row bs-examples">
+						<div class="col-xs-12">
+							<h2 id="custom-blog">博客</h2>
+							<p>简单的两列式博客布局，还包含了自定义的导航、页头、分类等元素。</p>
+							<a class="thumbnail" href="./custom/blog/index.html" target="_blank">
+								<img src="./custom/screenshots/blog.jpg" alt=""></a>
+						</div>
+					</div>
+
+					<div class="row bs-examples">
+						<div class="col-xs-12">
+							<h2 id="custom-justified-nav">两端对齐的导航栏</h2>
+							<p>Create a custom navbar with justified links. Heads up!</p>
+							<a class="thumbnail" href="./custom/justified-nav/index.html" target="_blank">
+								<img src="./custom/screenshots/justified-nav.jpg" alt=""></a>
+						</div>
+					</div>
+
+					<div class="row bs-examples">
+						<div class="col-xs-12">
+							<h2 id="custom-off-canvas">弹出式画布</h2>
+							<p>
+								Build a toggleable off-canvas navigation menu for use with Bootstrap.
+							</p>
+							<a class="thumbnail" href="./custom/offcanvas/index.html" target="_blank">
+								<img src="./custom/screenshots/offcanvas.jpg" alt=""></a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="bs-docs-section"></div>
+
+			</div>
+			<div class="col-md-3">
+				<div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+					<ul class="nav bs-docs-sidenav">
+						<li class="">
+							<a href="#custom-theme">主题</a>
+						</li>
+						<li>
+							<a href="#custom-jumbotron">超大屏幕</a>
+						</li>
+						<li class="">
+							<a href="#custom-carousel">轮播</a>
+							<ul class="nav">
+								<li>
+									<a href="#bootstrap-carousel">轮播</a>
+								</li>
+								<li>
+									<a href="#3D-carousel">3D效果</a>
+								</li>
+								<li>
+									<a href="#variable-width-carousel">可变宽度</a>
+								</li>
+								<li>
+									<a href="#autoplay-carousel">自动播放</a>
+								</li>
+							</ul>
+						</li>
+						<li class="">
+							<a href="#custom-blog">博客</a>
+						</li>
+						<li class="">
+							<a href="#custom-justified-nav">两端对齐的导航栏</a>
+						</li>
+						<li class="">
+							<a href="#custom-off-canvas">弹出式画布</a>
+						</li>
+					</ul>
+					<a class="back-to-top" href="#top">返回顶部</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

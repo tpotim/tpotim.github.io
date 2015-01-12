@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>TPO小站UI框架-开始使用</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="scripts/bootstrap3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="scripts/bootstrap3/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/framework.css">
+	<script src="scripts/jquery/js/jquery.min.js"></script>
+	<script src="scripts/bootstrap3/js/bootstrap.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<!--[if lt IE 9]>
+	<script src="scripts/functions/html5shiv.min.js"></script>
+	<script src="scripts/functions/respond.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">TPO小站UI框架</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="index.html">开始使用</a>
+					</li>
+					<li>
+						<a href="css.html">CSS布局</a>
+					</li>
+					<li>
+						<a href="components.html">页面控件</a>
+					</li>
+					<li>
+						<a href="plugin.html">JS插件</a>
+					</li>
+					<li>
+						<a href="custom.html">自定义</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							前端组
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="mailto:cate.zhao@tpo.com">Cate.zhao</a>
+							</li>
+							<li>
+								<a href="mailto:liang.fang@tpo.com">Liang.fang</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-9" role="main">
+
+				<div class="bs-docs-section">
+					<h1 class="page-header" id="dependency">引入的库、框架</h1>
+					<h3 id="dependency-jQuery">jQuery</h3>
+					<p>版本号:1.11.1</p>
+					<h3 id="dependency-Bootstrap">Bootstrap</h3>
+					<p>版本号:3.3.1</p>
+				</div>
+
+				<div class="bs-docs-section">
+					<h1 class="page-header" id="metadata">元数据设置</h1>
+					<div class="highlight">
+						<pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;renderer&quot;</span> <span class="na">content=</span><span class="s">&quot;webkit&quot;</span><span class="nt">&gt;</span>
+</code></pre>
+					</div>
+				</div>
+
+				<div class="bs-docs-section">
+					<h1 id="support-browsers" class="page-header">支持的浏览器</h1>
+					<h4 id="support-browsers-ie">Internet Explorer 8+</h4>
+					<h4 id="support-browsers-chrome">Chrome</h4>
+					<h4 id="support-browsers-firefox">Firefox</h4>
+					<h4 id="support-browsers-opera">Opera</h4>
+					<h4 id="support-browsers-safari">Safari</h4>
+					<h4 id="support-browsers-safari">...</h4>
+				</div>
+
+				<div class="bs-docs-section">
+					<h1 id="template" class="page-header">基本模板</h1>
+					<div class="highlight">
+						<pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;zh-cn&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Hello,TPO.<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>    
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;scripts/bootstrap3/css/bootstrap.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;scripts/bootstrap3/css/bootstrap-theme.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/jquery/js/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/bootstrap3/js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/app.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="c">&lt;!--[if lt IE 9]&gt;</span>
+<span class="c">      &lt;script src=&quot;scripts/functions/html5shiv.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="c">      &lt;script src=&quot;scripts/functions/respond.js&quot;&gt;&lt;/script&gt;</span>
+    <span class="c">&lt;![endif]--&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+ 
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+					</div>
+				</div>
+
+				<div class="bs-docs-section"></div>
+
+			</div>
+			<div class="col-md-3">
+				<div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+					<ul class="nav bs-docs-sidenav">
+
+						<li class="">
+							<a href="#dependency">引入的库、框架</a>
+							<ul class="nav">
+								<li class="">
+									<a href="#dependency-jQuery">jQuery</a>
+								</li>
+								<li class="">
+									<a href="#dependency-Bootstrap">Bootstrap</a>
+								</li>
+							</ul>
+						</li>
+						<li class="">
+							<a href="#metadata">元数据设置</a>
+						</li>
+						<li class="">
+							<a href="#support-browsers">支持的浏览器</a>
+							<ul class="nav">
+								<li class="">
+									<a href="#support-browsers-ie">IE8+</a>
+								</li>
+								<li class="">
+									<a href="#support-browsers-chrome">Chrome</a>
+								</li>
+								<li class="">
+									<a href="#support-browsers-firefox">Firefox</a>
+								</li>
+								<li class="">
+									<a href="#support-browsers-opera">Opera</a>
+								</li>
+								<li class="">
+									<a href="#support-browsers-safari">Safari</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#template">基本模板</a>
+						</li>
+					</ul>
+					<a class="back-to-top" href="#top">返回顶部</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
