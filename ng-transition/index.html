@@ -22,8 +22,12 @@
     <div style="background-color:gray;margin:50px">
       <a ng-click="back()" style="color:white;line-height:40px;">&lt;&nbsp;back</a>
     </div>
+
+    <div class="view-animate-container {{ forwardOrBack }}" style="margin:50px">
+      <div ng-view class="view-animate"></div>
+    </div>
+
     <div style="margin:50px">
-      Choose:
     <a href="Book/Moby" ng-click="forward()">Moby</a> |
     <a href="Book/Moby/ch/1" ng-click="forward()">Moby: Ch1</a> |
     <a href="Book/Gatsby" ng-click="forward()">Gatsby</a> |
@@ -31,12 +35,6 @@
     <a href="Book/Scarlet" ng-click="forward()">Scarlet Letter</a><br/>
     </div>
     
-
-
-
-    <div class="view-animate-container {{ forwardOrBack }}" style="margin:50px">
-      <div ng-view class="view-animate"></div>
-    </div>
 
 </div>
 </body>

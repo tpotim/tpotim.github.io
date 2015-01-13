@@ -1,0 +1,4 @@
+
+
+angularjs 依赖注入
+http://www.html-js.com/article/Using-Angular-to-develop-web-application-AngularJS-dependency-injection-behind-the-secret
