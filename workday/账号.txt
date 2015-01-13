@@ -1,9 +1,10 @@
 svn：
 svn://112.124.119.21/supesite/static
+svn://112.124.119.21/webui
+svn://112.124.119.21/bbs/bbsnet/toeflcorrection
 Liang.Fang = iEfGi8s5jGDx
 
-svn://112.124.119.21/webui
-Liang.Fang = iEfGi8s5jGDx
+
 
 email：
 liang.fang@tpooo.com / 880923@fl
