@@ -1,0 +1,22 @@
+Name:<input ng-model="name">&nbsp;&nbsp;&nbsp;&nbsp;
+Age:<input ng-model="age">&nbsp;&nbsp;&nbsp;&nbsp;
+Gender:<input ng-model="gender"><br />
+<a href="javascript:void(0)" ng-click="adduser()">add</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td><a href="#detail/{{$index}}">{{user.name}}</a></td>
+      <td>{{user.age}}</td>
+      <td>{{user.gender}}</td>
+      <td><a href="javascript:void(0)" ng-click="removeuser($index)">X</a></td>
+    </tr>
+  </tbody>
+</table>

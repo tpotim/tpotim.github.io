@@ -14,8 +14,8 @@ html{
 }
 
 .view-animate.ng-enter, .view-animate.ng-leave {
-  -webkit-transition:all .5s ease-in;
-  transition:all .5s ease-in;
+  -webkit-transition:all .3s ease-in;
+  transition:all .3s ease-in;
 
   display:block;
   width:100%;
