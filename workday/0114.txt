@@ -1,0 +1,22 @@
+让 msysgit 记住帐号密码
+
+在"C:\Documents and Settings\Administrator\.gitconfig" 文件 或 "项目/.git/config"文件 里增加两行：
+[credential]    
+    helper = store
+或者具体某项目记住账号/密码：进入修改“项目/.git/config”，增加
+
+[credential]    
+    helper = store
+
+设置完毕！
+
+
+
+
+
+
+
+
+
+
+

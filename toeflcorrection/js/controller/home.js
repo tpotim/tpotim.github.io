@@ -11,7 +11,7 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
             $timeout(function(){
               $scope.posts = response;
               $scope.refreshAction = false;
-            },2000)
+            },100)
          });
   }
 
@@ -22,7 +22,7 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
             $timeout(function(){
               $scope.posts = $scope.posts.concat(response);
               $scope.moreAction = false;
-            }, 2000)
+            }, 100)
             //debugger;
          });
   }
@@ -35,7 +35,7 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
   	.success(function(response){
       $timeout(function(){
         $scope.posts = response;  
-      }, 2000);
+      }, 100);
   		
   	});
 
