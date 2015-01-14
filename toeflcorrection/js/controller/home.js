@@ -1,17 +1,33 @@
-app.controller('HomeCtrl', function($rootScope, $scope, $http){ 
+app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){ 
 
   $scope.moreAction = false;
   $scope.refreshAction = false;
-  $scope.loadmore = function() {
-    $scope.moreAction = true;
-  }
+  $scope.posts = [];
+
   $scope.refresh = function() {
     $scope.refreshAction = true;
+    $http.get("refresh.json")
+         .success(function(response){
+            $scope.posts = response;
+            $scope.refreshAction = false;
+         });
   }
+
+  $scope.loadmore = function() {
+    $scope.moreAction = true;
+    $http.get("more.json")
+         .success(function(response){
+            $scope.posts.push(response);
+            $scope.moreAction = false;
+            debugger;
+         });
+  }
+
+  
   
   //$scope.posts = [{name:"a"}, {name:"b"}, {name:"c"},{name:"a"}, {name:"b"}, {name:"c"}];
 
-  $http.get("j1.json")
+  $http.get("list.json")
   	.success(function(response){
   		$scope.posts = response;
   	});

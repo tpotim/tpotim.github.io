@@ -1,7 +1,7 @@
 app.controller('DetailCtrl', function($routeParams, $rootScope, $scope, $http){   
   $scope.Id = $routeParams;
   $rootScope.goback = true;
-  $http.get("j2.json")
+  $http.get("detail.json")
   	.success(function(response){
   		$scope.post = response;
   	});
