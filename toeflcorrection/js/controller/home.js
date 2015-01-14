@@ -17,7 +17,7 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
     $scope.moreAction = true;
     $http.get("more.json")
          .success(function(response){
-            $scope.posts.push(response);
+            $scope.posts = $scope.posts.concat(response);
             $scope.moreAction = false;
             debugger;
          });
