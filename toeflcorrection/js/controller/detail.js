@@ -1,9 +1,11 @@
-app.controller('DetailCtrl', function($routeParams, $rootScope, $scope, $http){   
+app.controller('DetailCtrl', function($routeParams, $rootScope, $scope, $http, $timeout){   
   $scope.Id = $routeParams;
   $rootScope.goback = true;
   $http.get("detail.json")
   	.success(function(response){
-  		$scope.post = response;
+  		$timeout(function(){
+  			$scope.post = response;	
+  		}, 2000);  		
   	});
 
   $rootScope.forwardOrBack = 'forward';
