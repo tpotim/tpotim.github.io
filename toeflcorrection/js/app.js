@@ -9,7 +9,6 @@ var app = angular.module('App', [
 app.config(function($routeProvider) {
   $routeProvider.when('/',              {templateUrl: 'views/home.html', controller: 'HomeCtrl', reloadOnSearch: false});
   $routeProvider.when('/detail/:Id',        {templateUrl: 'views/detail.html', controller: 'DetailCtrl', reloadOnSearch: false});
-  $routeProvider.when('/test',              {templateUrl: 'views/test.html', reloadOnSearch: false});
 });
 
 
