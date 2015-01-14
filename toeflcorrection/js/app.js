@@ -7,6 +7,7 @@ var app = angular.module('App', [
 
 
 app.config(function($routeProvider) {
+  
   $routeProvider.when('/',              {templateUrl: 'views/home.html', controller: 'HomeCtrl', reloadOnSearch: false});
   $routeProvider.when('/detail/:Id',        {templateUrl: 'views/detail.html', controller: 'DetailCtrl', reloadOnSearch: false});
 });
@@ -17,10 +18,14 @@ app.controller('MainController', function($rootScope, $scope){
   
   $rootScope.$on('$routeChangeStart', function(){
     $rootScope.loading = true;
+    console.log(arguments);
+
   });
 
   $rootScope.$on('$routeChangeSuccess', function(){
     $rootScope.loading = false;
+    console.log(arguments);
+
   });
 
   $rootScope.goback = false;

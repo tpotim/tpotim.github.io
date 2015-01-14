@@ -29,8 +29,6 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
 
   $rootScope.forwardOrBack = 'back';
   
-  //$scope.posts = [{name:"a"}, {name:"b"}, {name:"c"},{name:"a"}, {name:"b"}, {name:"c"}];
-
   $http.get("list.json")
   	.success(function(response){
       $timeout(function(){
