@@ -90,3 +90,41 @@ input.scrollable-header {
 .btn i{
   font-size: 20px;
 }
+
+.app-content{
+  position: relative;
+}
+.view-animate.ng-enter, .view-animate.ng-leave{
+  -webkit-transition:all .3s linear;
+  transition:all .3s linear;
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.forward .view-animate.ng-enter {
+  left:100%;
+}
+.forward .view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.forward .view-animate.ng-leave.ng-leave-active {
+  left:100%;
+}
+
+
+.back .view-animate.ng-enter {
+  left:-100%;
+}
+.back .view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.back .view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}

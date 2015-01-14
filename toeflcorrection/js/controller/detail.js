@@ -5,4 +5,6 @@ app.controller('DetailCtrl', function($routeParams, $rootScope, $scope, $http){
   	.success(function(response){
   		$scope.post = response;
   	});
+
+  $rootScope.forwardOrBack = 'forward';
 });

@@ -1,5 +1,6 @@
 var app = angular.module('App', [
   'ngRoute',
+  'ngAnimate',
   'mobile-angular-ui',
   'ngTouch'
 ]);

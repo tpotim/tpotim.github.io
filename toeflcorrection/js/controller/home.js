@@ -1,4 +1,4 @@
-app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){ 
+app.controller('HomeCtrl', function($rootScope, $scope, $http){ 
 
   $scope.moreAction = false;
   $scope.refreshAction = false;
@@ -19,11 +19,11 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
          .success(function(response){
             $scope.posts = $scope.posts.concat(response);
             $scope.moreAction = false;
-            debugger;
+            //debugger;
          });
   }
 
-  
+  $rootScope.forwardOrBack = 'back';
   
   //$scope.posts = [{name:"a"}, {name:"b"}, {name:"c"},{name:"a"}, {name:"b"}, {name:"c"}];
 
@@ -31,5 +31,7 @@ app.controller('HomeCtrl', function($rootScope, $scope, $http, $timeout){
   	.success(function(response){
   		$scope.posts = response;
   	});
+
+
   
 });
