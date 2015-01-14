@@ -5,7 +5,7 @@ app.controller('DetailCtrl', function($routeParams, $rootScope, $scope, $http, $
   	.success(function(response){
   		$timeout(function(){
   			$scope.post = response;	
-  		}, 2000);  		
+  		}, 2000);   		
   	});
 
   $rootScope.forwardOrBack = 'forward';
