@@ -9,10 +9,10 @@ app.controller('MainController', function($scope, $http, $timeout){
       $scope.show_detail = false;
       $scope.loading = true;
       $scope.loading_detail = false;
-      $scope.predicate = 'name';
+      $scope.orderBy = 'name';
             
 
-      $scope.showDetail = function(){
+      $scope.goDetail = function(){
         $scope.show_detail = true;
         $scope.loading_detail = true;
 

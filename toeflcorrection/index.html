@@ -48,8 +48,8 @@
               ui-show="filterDropdown" 
               ui-state="filterDropdown"
               ui-turn-off="filterDropdown">
-              <li><a ng-click="predicate = 'name'">最后发表</a></li>
-              <li><a ng-click="predicate = 'title'">发帖时间</a></li>   
+              <li><a ng-click="orderBy = 'name';Ui.turnOff('filterDropdown')">最后发表</a></li>
+              <li><a ng-click="orderBy = 'title'">发帖时间</a></li>   
               <li><a>回复/查看</a></li>            
               <li class="divider"></li>
               <li><a>热门</a></li>
@@ -73,7 +73,7 @@
                   <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
                 </div>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-home media" ng-click="showDetail()" ng-repeat="post in list | orderBy:predicate">
+                    <a class="list-group-item list-group-item-home media" ng-click="goDetail()" ng-repeat="post in list | orderBy:orderBy">
                         <div class="pull-left">
                             <img ng-src="{{post.img_url}}" style="width:48px;height:48px;">
                             <div>{{post.name}}</div>
