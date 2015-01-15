@@ -96,8 +96,8 @@ input.scrollable-header {
 }
 
 .list-page, .detail-page{
-  -webkit-transition:all .4s ease-in;
-  transition:all .4s ease-in;
+  -webkit-transition:all .3s ease-in;
+  transition:all .3s ease-in;
 
   width:100%;
   position:absolute;  
