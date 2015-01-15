@@ -12,7 +12,7 @@ app.controller('MainController', function($scope, $http, $timeout){
       $scope.orderBy = 'name';
             
 
-      $scope.goDetail = function(){
+      $scope.goDetail = function(post){
         $scope.show_detail = true;
         $scope.loading_detail = true;
 
@@ -20,6 +20,7 @@ app.controller('MainController', function($scope, $http, $timeout){
           .success(function(response){
             $timeout(function(){
               $scope.detail = response; 
+              $scope.detail.title = post.title;
               $scope.loading_detail = false;
             }, 0);      
           });

@@ -73,7 +73,7 @@
                   <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
                 </div>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-home media" ng-click="goDetail()" ng-repeat="post in list | orderBy:orderBy">
+                    <a class="list-group-item list-group-item-home media" ng-click="goDetail(post)" ng-repeat="post in list | orderBy:orderBy">
                         <div class="pull-left">
                             <img ng-src="{{post.img_url}}" style="width:48px;height:48px;">
                             <div>{{post.name}}</div>
