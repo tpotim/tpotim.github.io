@@ -16,7 +16,7 @@ app.controller('MainController', function($scope, $http, $timeout){
         $scope.show_detail = true;
         $scope.loading_detail = true;
 
-        $http.get("detail.json")
+        $http.get("json/detail.json")
           .success(function(response){
             $timeout(function(){
               $scope.detail = response; 
@@ -29,7 +29,7 @@ app.controller('MainController', function($scope, $http, $timeout){
         $scope.show_detail = false;
       }
 
-      $http.get("list.json")
+      $http.get("json/list.json")
         .success(function(response){
           $timeout(function(){
             $scope.list = response;  
@@ -39,7 +39,7 @@ app.controller('MainController', function($scope, $http, $timeout){
 
     $scope.refresh = function() {
       $scope.refreshAction = true;
-      $http.get("refresh.json")
+      $http.get("json/refresh.json")
            .success(function(response){            
               $timeout(function(){
                 $scope.list = response;
@@ -50,7 +50,7 @@ app.controller('MainController', function($scope, $http, $timeout){
 
     $scope.loadmore = function() {
       $scope.moreAction = true;
-      $http.get("more.json")
+      $http.get("json/more.json")
            .success(function(response){            
               $timeout(function(){
                 $scope.list = $scope.list.concat(response);
