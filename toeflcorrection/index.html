@@ -17,8 +17,7 @@
     <script src="dist/angularjs/angular-animate.min.js"></script>
     <script src="dist/angularui/js/mobile-angular-ui.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/controller/home.js"></script>
-    <script src="js/controller/detail.js"></script>
+    
   </head>
 
   <body 
@@ -32,12 +31,12 @@
         <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
           托福写作批改
         </div>
-        <div class="btn-group pull-left" ui-yield-to="navbarAction">
-          <div class="btn" ng-show="goback" ng-click="gobackAction()">
+        <div class="btn-group pull-left" ui-yield-to="navbarAction" ng-show="show_detail">
+          <div class="btn" ng-click="showHome()">
             <i class="fa fa-angle-left"></i>
           </div>
         </div>
-        <div class="btn-group pull-right" ui-yield-to="navbarAction">
+        <div class="btn-group pull-right" ui-yield-to="navbarAction" ng-show="!show_detail">
           <div ui-turn-on='filterDropdown' class="btn">
             <i class="fa fa-filter"></i>
           </div>
@@ -49,8 +48,8 @@
               ui-show="filterDropdown" 
               ui-state="filterDropdown"
               ui-turn-off="filterDropdown">
-              <li><a>最后发表</a></li>
-              <li><a>发帖时间</a></li>   
+              <li><a ng-click="predicate = 'name'">最后发表</a></li>
+              <li><a ng-click="predicate = 'title'">发帖时间</a></li>   
               <li><a>回复/查看</a></li>            
               <li class="divider"></li>
               <li><a>热门</a></li>
@@ -65,9 +64,62 @@
           <i class="fa fa-spinner fa-spin loading-spinner"></i>
         </div>
 
-        <div class="app-content {{forwardOrBack}}">
-          <div ng-view class="view-animate"></div>
+        <div class="app-content">
+
+          <div class="scrollable list-page" ng-show="!show_detail"> 
+            <div class="scrollable-content" ui-scroll-bottom='loadmore()' ui-scroll-top="refresh()">
+              <div class="list-group">
+                <div ng-show="refreshAction" class="app-content-loading small">
+                  <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
+                </div>
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-home media" ng-click="showDetail()" ng-repeat="post in list | orderBy:predicate">
+                        <div class="pull-left">
+                            <img ng-src="{{post.img_url}}" style="width:48px;height:48px;">
+                            <div>{{post.name}}</div>
+                        </div>
+                        <div class="media-body">
+                          <h5 class="media-heading">{{post.title}}</h5>
+                        </div>
+                    </a>
+                </div>
+                <div ng-show="moreAction" class="app-content-loading small">
+                  <i class="fa fa-spinner fa-spin loading-spinner small"></i> 加载更多
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scrollable detail-page" ng-show="show_detail">  
+            <div class="scrollable-content"  ng-swipe-right="showHome()">
+              
+              <div>
+                <div ng-show="loading_detail" style="background-color:white">
+                  <i class="fa fa-spinner fa-spin loading-spinner"></i>
+                </div>
+                <div class="list-group" ng-show="!loading_detail">
+                  <div class="list-group-item list-group-item-home">
+                    {{detail.title}}
+                  </div>
+                  <div class="list-group-item list-group-item-home">
+                    <div class="media-body">
+                        {{detail.content}}
+                    </div>
+                  </div>
+                  <div class="list-group-item list-group-item-home">
+                    <div class="media-body">
+                        {{detail.comment}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
         </div>
+
+
+
       </div>
 
     </div><!-- ~ .app -->

@@ -1,38 +1,62 @@
 var app = angular.module('App', [
-  'ngRoute',
   'ngAnimate',
   'mobile-angular-ui',
   'ngTouch'
 ]);
 
+app.controller('MainController', function($scope, $http, $timeout){
 
-app.config(function($routeProvider) {
-  
-  $routeProvider.when('/',              {templateUrl: 'views/home.html', controller: 'HomeCtrl', reloadOnSearch: false});
-  $routeProvider.when('/detail/:Id',        {templateUrl: 'views/detail.html', controller: 'DetailCtrl', reloadOnSearch: false});
-});
+      $scope.show_detail = false;
+      $scope.loading = true;
+      $scope.loading_detail = false;
+      $scope.predicate = 'name';
+            
 
+      $scope.showDetail = function(){
+        $scope.show_detail = true;
+        $scope.loading_detail = true;
 
-app.controller('MainController', function($rootScope, $scope){
-  $scope.userAgent = navigator.userAgent;  
-  
-  $rootScope.$on('$routeChangeStart', function(){
-    $rootScope.loading = true;
-    console.log(arguments);
+        $http.get("detail.json")
+          .success(function(response){
+            $timeout(function(){
+              $scope.detail = response; 
+              $scope.loading_detail = false;
+            }, 0);      
+          });
+      }
 
-  });
+      $scope.showHome = function(){
+        $scope.show_detail = false;
+      }
 
-  $rootScope.$on('$routeChangeSuccess', function(){
-    $rootScope.loading = false;
-    console.log(arguments);
+      $http.get("list.json")
+        .success(function(response){
+          $timeout(function(){
+            $scope.list = response;  
+            $scope.loading = false;
+          }, 400);      
+       });
 
-  });
+    $scope.refresh = function() {
+      $scope.refreshAction = true;
+      $http.get("refresh.json")
+           .success(function(response){            
+              $timeout(function(){
+                $scope.list = response;
+                $scope.refreshAction = false;
+              },100)
+           });
+    }
 
-  $rootScope.goback = false;
-  
-  $rootScope.gobackAction = function() {
-    history.back(-1);
-    $rootScope.goback = false;
-  }
-  
+    $scope.loadmore = function() {
+      $scope.moreAction = true;
+      $http.get("more.json")
+           .success(function(response){            
+              $timeout(function(){
+                $scope.list = $scope.list.concat(response);
+                $scope.moreAction = false;
+              }, 100)
+           });
+    }
+
 });

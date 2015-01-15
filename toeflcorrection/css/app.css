@@ -94,7 +94,39 @@ input.scrollable-header {
 .app-content{
   position: relative;
 }
-.view-animate.ng-enter, .view-animate.ng-leave{
+
+.list-page, .detail-page{
+  -webkit-transition:all .3s linear;
+  transition:all .3s linear;
+
+  width:100%;
+  position:absolute;  
+  
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+.list-page.ng-hide, .detail-page.ng-hide{
+  left:-100%;
+}
+.detail-page.ng-hide-remove{
+  left:100%;
+}
+.detail-page.ng-hide-remove-active{
+  left:0;
+}
+
+.detail-page.ng-hide-add{
+  left:0;
+}
+.detail-page.ng-hide-add-active{
+  left:100%;
+}
+
+
+/* .view-animate.ng-enter, .view-animate.ng-leave{
   -webkit-transition:all .3s linear;
   transition:all .3s linear;
 
@@ -106,9 +138,11 @@ input.scrollable-header {
   top:0;
   right:0;
   bottom:0;
-}
+} */
 
-.forward .view-animate.ng-enter {
+
+
+/* .forward .view-animate.ng-enter {
   left:-100%;
 }
 .forward .view-animate.ng-enter.ng-enter-active {
@@ -127,4 +161,4 @@ input.scrollable-header {
 }
 .back .view-animate.ng-leave.ng-leave-active {
   left:100%;
-}
+} */
