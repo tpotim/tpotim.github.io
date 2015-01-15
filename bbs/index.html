@@ -72,13 +72,14 @@
                   <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
                 </div>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-home media" ng-click="goDetail(post)" ng-repeat="post in list">
-                        <div class="pull-left round-border">
-                            <img ng-src="{{post.img_url}}" style="width:48px;height:48px;border-radius:60px;">
-                            <div>{{post.name}}</div>
+                    <a class="list-group-item list-group-item-home media post-item" ng-click="goDetail(post)" ng-repeat="post in list">
+                        <div class="pull-left user">
+                            <img ng-src="{{post.img_url}}" style="width:68px;height:68px;border-radius:36px;">
+                            <div class="user-name">{{post.name}}</div>
                         </div>
                         <div class="media-body">
-                          <h5 class="media-heading">{{post.title}}</h5>
+                          <div class="media-heading">{{post.title}}</div>
+                          <div class="post-time">发表于2015-1-13 23:19</div>
                         </div>
                     </a>
                 </div>
