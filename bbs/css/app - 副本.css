@@ -1,0 +1,164 @@
+#lightbulb {
+  font-size: 100px;
+  display: block;
+  text-align: center;
+}
+
+h1 {
+  padding: 0;
+  margin: 10px 0;
+}
+
+.chat-user-avatar {
+  font-size: 40px;
+  background: #ccc;
+  padding: 5px 10px;
+}
+
+.feature-icon {
+  font-size: 44px;
+  padding: 0;
+  line-height: 68px;
+  width: 72px;
+  text-align: center;
+  opacity: .8;
+  border: 3px solid;
+  border-radius: 200px;
+  height: 72px;
+  margin-bottom: 20px;
+}
+
+.feature-icon.fa-gamepad {
+  line-height: 60px;
+}
+
+.feature-icon.fa-tachometer {
+  line-height: 60px;
+}
+
+.app-content-loading {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.app-content-loading.small{
+  margin-top: 20px;
+}
+
+.loading-spinner {
+  position: absolute;
+  font-size: 50px;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+.loading-spinner.small{
+  font-size: 20px;
+  top: 25px;
+  left: 40%;
+}
+
+.notices-container {
+  overflow-x: hidden;
+}
+
+
+.list-group-item-home {
+  padding: 20px; 
+}
+
+pre {
+  text-align: left !important;
+}
+
+input.scrollable-header {
+  border-bottom: 3px solid #ccc;
+}
+
+.scrollable-content{
+  background-color: #ccc;
+}
+
+.list-group-item-home.media{
+  margin: 10px;
+}
+
+.btn i{
+  font-size: 20px;
+}
+
+.app-content{
+  position: relative;
+}
+
+.list-page, .detail-page{
+  -webkit-transition:all .3s linear;
+  transition:all .3s linear;
+
+  width:100%;
+  position:absolute;  
+  
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+.list-page.ng-hide, .detail-page.ng-hide{
+  left:-100%;
+}
+.detail-page.ng-hide-remove{
+  left:100%;
+}
+.detail-page.ng-hide-remove-active{
+  left:0;
+}
+
+.detail-page.ng-hide-add{
+  left:0;
+}
+.detail-page.ng-hide-add-active{
+  left:100%;
+}
+
+
+/* .view-animate.ng-enter, .view-animate.ng-leave{
+  -webkit-transition:all .3s linear;
+  transition:all .3s linear;
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+} */
+
+
+
+/* .forward .view-animate.ng-enter {
+  left:-100%;
+}
+.forward .view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.forward .view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}
+
+
+.back .view-animate.ng-enter {
+  left:100%;
+}
+.back .view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.back .view-animate.ng-leave.ng-leave-active {
+  left:100%;
+} */
