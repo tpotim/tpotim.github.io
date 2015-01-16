@@ -79,20 +79,73 @@ input.scrollable-header {
   border-bottom: 3px solid #ccc;
 }
 
-.head-portrait{
-  width:68px;
-  height:68px;
-  border-radius:34px;
+
+
+.list-group-item-home.media{
+  margin: 10px;
+  border-radius: 5px !important;
+}
+
+
+.btn i{
+  font-size: 20px;
+}
+
+
+.toefl-navbar{
+  background-color:#CE7A4C;
+  color:#FFFFFF;
+}
+.toefl-navbar .btn{
+  color:#FFFFFF;
 }
 
 .scrollable-content{
   background-color: #F0F0F0;
 }
 
-.list-group-item-home.media{
-  margin: 10px;
-  border-radius: 5px !important;
+.app-content{
+  position: relative;
 }
+
+.list-page, .post-page, .comment-page{
+  transition:all .3s linear;
+  width:100%;
+  position:absolute;  
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+.list-page.ng-hide{
+  left:-100%;
+}
+
+.comment-page.ng-hide{
+  left:100%;
+}
+
+.forward .post-page.ng-hide{
+  left:-100%;
+}
+.backward .post-page.ng-hide{
+  left:100%;
+}
+
+
+
+.head-portrait-70{
+  width:70px;
+  height:70px;
+  border-radius:35px;
+}
+.head-portrait-60{
+  width:60px;
+  height:60px;
+  border-radius:30px;
+}
+
 .post-item .user{
   margin-right: 20px;
 }
@@ -112,86 +165,44 @@ input.scrollable-header {
   margin-top: 10px;
 }
 
-.btn i{
+.post-detail{
+  padding:20px;
+}
+
+.post-detail .post-title{
+  font-size: 18px;
+}
+.post-detail .writer-info{
+  background-color: #DBE1E5;
+  margin: 10px -20px;
+  padding: 10px 20px;
+}
+.post-detail .writer-info .head-portrait{
+  margin-right: 22px;
+}
+.post-detail .writer-info .writer-name{
   font-size: 20px;
+  color: #8399A4;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+.post-detail .writer-info .post-time{
+ font-size: 17px; 
+ color: #99ACB7;
+}
+.post-detail .post-content{
+  font-size: 16px;
+}
+.post-detail .comment-count{
+  border-top: 1px solid gray;
+  margin-top: 25px;
+  padding-top:10px;
+  padding-bottom: 10px;
+
 }
 
-
-.toefl-navbar{
-  background-color:#CE7A4C;
-  color:#FFFFFF;
-}
-.toefl-navbar .btn{
-  color:#FFFFFF;
-}
-
-
-.app-content{
-  position: relative;
-}
-
-.list-page, .post-page{
-  -webkit-transition:all .3s linear;
-  transition:all .3s linear;
-  width:100%;
-  position:absolute;  
-  left:0;
-  top:0;
-  right:0;
-  bottom:0;
-}
-
-.list-page.ng-hide, .post-page.ng-hide{
-  left:-100%;
-}
-.post-page.ng-hide-remove{
-  left:100%;
-}
-.post-page.ng-hide-remove-active{
-  left:0;
-}
-
-.post-page.ng-hide-add{
-  left:0;
-}
-.post-page.ng-hide-add-active{
-  left:100%;
-}
-
-
-/* .view-animate.ng-enter, .view-animate.ng-leave{
-  -webkit-transition:all .3s linear;
-  transition:all .3s linear;
-
-  display:block;
-  width:100%;
-
-  position:absolute;
-  left:0;
-  top:0;
-  right:0;
-  bottom:0;
-} */
-
-
-
-/* .forward .view-animate.ng-enter {
-  left:-100%;
-}
-.forward .view-animate.ng-enter.ng-enter-active {
-  left:0;
-}
-.forward .view-animate.ng-leave.ng-leave-active {
-  left:-100%;
-}
-
-
-.back .view-animate.ng-enter {
-  left:100%;
-}
-.back .view-animate.ng-enter.ng-enter-active {
-  left:0;
-}
-.back .view-animate.ng-leave.ng-leave-active {
-  left:100%;
-} */
+.post-detail .comment-list{
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 10px 10px;
+ }

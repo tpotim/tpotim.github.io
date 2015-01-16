@@ -1,0 +1,19 @@
+{
+"postId":1,
+"postContent" : "Question: Summarize the points made in the lecture, being sure to explain how they cast doubt on specific points made in the reading passage. ",
+"commentCount" : 2,
+"commentList" : [{
+		"commentId" : 1,
+		"headPortraitUrl":"http://ucenter.tpooo.com/avatar.php?uid=280112&size=middle",
+		"commenterName":"111TPO小站特邀老师",
+		"commentTime":"2014-12-1",
+		"commentContent":"In the passage, the author states that most American wood companies will not adopt environmental friendly practices to produce ecocertified wood. However, the professor refutes it, and points out its flaws respectively."
+	},
+	{
+		"commentId" : 2,
+		"headPortraitUrl":"http://ucenter.tpooo.com/avatar.php?uid=280112&size=middle",
+		"commenterName":"22TPO小站特邀老师",
+		"commentTime":"2014-12-2",
+		"commentContent":"In the passage, the author states that most American wood companies will not adopt environmental friendly practices to produce ecocertified wood. However, the professor refutes it, and points out its flaws respectively."
+	}]
+}

@@ -30,12 +30,12 @@
         <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
           写作批改
         </div>
-        <div class="btn-group pull-left" ui-yield-to="navbarAction" ng-show="show_detail">
-          <div class="btn" ng-click="showHome()">
+        <div class="btn-group pull-left" ui-yield-to="navbarAction" ng-show="!show_page_post_list">
+          <div class="btn" ng-click="back()">
             <i class="fa fa-angle-left"></i>
           </div>
         </div>
-        <div class="btn-group pull-right" ui-yield-to="navbarAction" ng-show="!show_detail">
+        <div class="btn-group pull-right" ui-yield-to="navbarAction" ng-show="show_page_post_list">
           <div ui-turn-on='filterDropdown' class="btn">
             <i class="fa fa-filter"></i>
           </div>
@@ -66,16 +66,16 @@
         <div class="app-content">
           
           <!-- // Post list  -->
-          <div class="scrollable list-page" ng-show="!show_detail"> 
+          <div class="scrollable list-page" ng-show="show_page_post_list"> 
             <div class="scrollable-content" ui-scroll-bottom='loadmore()' ui-scroll-top="refresh()">
               <div class="list-group">
                 <div ng-show="refreshAction" class="app-content-loading small">
                   <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
                 </div>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-home media post-item" ng-click="goDetail(post)" ng-repeat="post in list">
+                    <a class="list-group-item list-group-item-home media post-item" ng-click="postList2post(post)" ng-repeat="post in list">
                         <div class="pull-left user">
-                            <img ng-src="{{post.headPortraitUrl}}" class="head-portrait">
+                            <img ng-src="{{post.headPortraitUrl}}" class="head-portrait-70">
                             <div class="user-name">{{post.writerName}}</div>
                         </div>
                         <div class="media-body">
@@ -92,45 +92,52 @@
             </div>
           </div>
 
-          <!-- // Post  -->
-          <div class="scrollable post-page" ng-show="show_detail">  
-            <div class="scrollable-content"  ng-swipe-right="showHome()">
-              <div>
-                <div ng-show="loading_detail">
-                  <i class="fa fa-spinner fa-spin loading-spinner"></i>
-                </div>
-                <div class="post-title">{{post.title}}</div>
-                  <img ng-src="{{post.headPortraitUrl}}" class="head-portrait pull-left">
-                <div class="media-body">
-                  <div>{{post.name}}</div>
-                  <div>{{post.postTime}}</div>
-                  <div class="post-content">{{post.content}}</div>
-                </div>                  
-                <div>评论(203)</div>
-                <div class="list-group" ng-show="!loading_detail">
-                  <a class="list-group-item list-group-item-home comment-item" ng-click="gotoCommentPage()" ng-repeat="comment in post.commentList">
-                    <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait pull-left">
+          <!-- // Post detail  -->
+          <div class="{{page_nav}}">
+            <div class="scrollable post-page"  ng-show="show_page_post">  
+              <div class="scrollable-content"  ng-swipe-right="showHome()">
+                <div class="post-detail">
+                
+                  <div ng-show="loading_detail">
+                    <i class="fa fa-spinner fa-spin loading-spinner"></i>
+                  </div>
+                  <div class="post-title">{{post.postTitle}}</div>
+                  <div class="writer-info">
+                    <img ng-src="{{post.headPortraitUrl}}" class="head-portrait-70 pull-left">
                     <div class="media-body">
-                      <div>{{comment.commenterName}}</div>
-                      <div>{{comment.commentTime}}</div>
-                      <div>{{comment.commentContent}}</div>
-                    </div>                    
-                  </a>
-                </div>
-              </div>              
+                      <div class="writer-name">{{post.writerName}}</div>
+                      <div class="post-time">发表于{{post.postTime}}</div>                    
+                    </div>   
+                    <div class="clearfix"></div> 
+                  </div>   
+                  <div class="post-content">{{post.postContent}}</div>           
+                  <div class="comment-count"><span>评论&nbsp;({{post.commentCount}})</span></div>
+                 
+                  <div class="list-group comment-list" ng-show="!loading_detail">
+                    <a class="list-group-item list-group-item-home comment-item" ng-click="post2comment(comment)" ng-repeat="comment in post.commentList">
+                      <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait-60 pull-left">
+                      <div class="media-body">
+                        <div>{{comment.commenterName}}</div>
+                        <div>{{comment.commentTime}}</div>
+                        <div>{{comment.commentContent}}</div>
+                      </div>                    
+                    </a>
+                  </div>
+                </div>              
+              </div>
             </div>
           </div>
 
           <!-- // Comment -->
-          <div class="scrollable" ng-show="showCommentPage">  
+          <div class="scrollable comment-page" ng-show="show_page_comment">  
             <div class="scrollable-content">
-              <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait pull-left">
+              <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait-70 pull-left">
               <div class="media-body">
-                  <div>{{comment.name}}</div>
-                  <div>{{comment.postTime}}</div>                 
+                  <div>{{comment.commenterName}}</div>
+                  <div>{{comment.commentTime}}</div>                 
               </div>
               <div class="clearfix"></div>
-              <div class="post-content">{{comment.content}}</div>
+              <div class="post-content">{{comment.commentContent}}</div>
             </div>
           </div>
 

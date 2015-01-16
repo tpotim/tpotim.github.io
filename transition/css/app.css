@@ -128,7 +128,57 @@ input.scrollable-header {
 
 .app-content{
   position: relative;
+  
 }
+
+.scrollable-content{
+  padding-top: 150px;
+  padding-left: 150px;
+}
+
+.p-a .scrollable-content{
+  background-color: #8A87EC;
+}
+.p-b .scrollable-content{
+  background-color: #72C097;
+}
+.p-c .scrollable-content{
+  background-color: #E5E7AD; 
+}
+
+.p-a, .p-b, .p-c{
+  -webkit-transition:all 11.3s linear;
+  transition:all 11.3s linear;
+  width:100%;
+  position:absolute;  
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+
+.p-a.ng-hide{
+
+}
+
+.p-a.ng-hide-add{
+
+}
+.p-a.ng-hide-add-active{
+
+}
+
+.p-a.ng-hide-remove{
+
+}
+
+.p-a.ng-hide-remove-active{
+
+}
+
+
+
 
 .list-page, .post-page{
   -webkit-transition:all .3s linear;

@@ -1,0 +1,78 @@
+﻿1: 查询帖子列表 (10条一次)
+
+request:
+GET /post-list?orderBy=:orderBy&page=:page
+
+response:
+{
+	"postList": [
+				 {
+					"postId" : 1,
+					"headPortraitUrl" : "http://ucenter.tpooo.com/avatar.php?uid=322266&size=middle",
+					"writerName" : "苏慕白",
+					"postTitle" : "[TPO模考软件求批改] [机经]明天考试，恳请老师急速批改 - [悬赏 10 小站金币]",
+					"postTime" : "1421387651630"
+				 },
+				 {
+					"postId" : 2,
+					"headPortraitUrl" : "http://ucenter.tpooo.com/avatar.php?uid=322266&size=middle",
+					"writerName" : "苏慕白",
+					"postTitle" : "[TPO模考软件求批改] [机经]明天考试，恳请老师急速批改 - [悬赏 10 小站金币]",
+					"postTime" : "1421387651630"
+				 }
+			    ]
+}
+
+
+2:查询帖子内容
+
+request:
+GET /post-detail?postId=:postId
+
+response:
+{
+	"postId": 1,
+	"postContent" : "Question: Summarize the points made in the lecture, being sure to ....",
+	"commentCount" : 2,
+	"commentList" : [
+						{
+							"commentId" : 1,
+							"headPortraitUrl" : "http://ucenter.tpooo.com/avatar.php?uid=280112&size=middle",
+							"commenterName" : "TPO小站特邀老师",
+							"commentTime" : "1421387651630",
+							"commentContent" : "In the passage, the author states that most American wood ..."
+						},
+						{
+							"commentId" : 2,
+							"headPortraitUrl" : "http://ucenter.tpooo.com/avatar.php?uid=280112&size=middle",
+							"commenterName" : "TPO小站特邀老师",
+							"commentTime" : "1421387651630",
+							"commentContent" : "In the passage, the author states that most American wood ..."
+						}
+					]
+}
+
+3:返回评论 （10条一次）
+
+request:
+GET /post-detail/comment-list?postId=:postId&page=:page
+
+response:
+{
+	"commentList" : [
+						{
+							"commentId" : 1,
+							"headPortraitUrl" : "http://ucenter.tpooo.com/avatar.php?uid=280112&size=middle",
+							"commenterName" : "TPO小站特邀老师",
+							"commentTime" : "1421387651630",
+							"commentContent" : "In the passage, the author states that most American wood ..."
+						},
+						{
+							"commentId" : 2,
+							"headPortraitUrl" : "http://ucenter.tpooo.com/avatar.php?uid=280112&size=middle",
+							"commenterName" : "TPO小站特邀老师",
+							"commentTime" : "1421387651630",
+							"commentContent" : "In the passage, the author states that most American wood ..."
+						}
+					]
+}

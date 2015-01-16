@@ -24,15 +24,30 @@ app.controller('MainController', function($scope, $http, $timeout, $filter){
         $scope.show_detail = true;
         $scope.loading_detail = true;
 
-        $http.get("json/detail.json")
+        $http.get("json/post.json")
           .success(function(response){
             $timeout(function(){
-              $scope.detail = response; 
-              $scope.detail.title = post.title;
+              $scope.post = response; 
+              $scope.post.title = post.title;
               $scope.loading_detail = false;
             }, 0);      
           });
       }
+
+      $scope.getCommentDetail = function(){
+        $http.get("json/comment.json").success(function(response){
+          $timeout(function(){
+            $scope.comment = response;
+          },100)
+        });
+      }
+
+      $scope.gotoCommentPage = function(){
+        $scope.showCommentPage = true;
+        $scope.getCommentDetail();
+      }
+
+      $scope.getCommentDetail();
 
       $scope.orderBy = function(by){
         $scope.orderByStr = by;

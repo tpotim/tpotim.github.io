@@ -1,0 +1,109 @@
+
+
+.wrapper{
+  position: relative;
+  
+}
+
+
+.p-a{
+  -webkit-transition:all 22.3s linear;
+  transition:all 22.3s linear;
+  width:100%;
+  position:absolute;  
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+
+/* .p-a.ng-hide{
+left:-100%;
+} */
+
+.p-a.ng-hide-add{
+left:0;
+}
+.p-a.ng-hide-add-active{
+left:100%;
+}
+.p-a.ng-hide{
+  left:100%;
+}
+.p-a.ng-hide-remove{
+left:100%;
+}
+
+.p-a.ng-hide-remove-active{
+left:0;
+}
+
+
+
+
+.list-page, .post-page{
+  -webkit-transition:all .3s linear;
+  transition:all .3s linear;
+  width:100%;
+  position:absolute;  
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}
+
+.list-page.ng-hide, .post-page.ng-hide{
+  left:-100%;
+}
+.post-page.ng-hide-remove{
+  left:100%;
+}
+.post-page.ng-hide-remove-active{
+  left:0;
+}
+
+.post-page.ng-hide-add{
+  left:0;
+}
+.post-page.ng-hide-add-active{
+  left:100%;
+}
+
+
+/* .view-animate.ng-enter, .view-animate.ng-leave{
+  -webkit-transition:all .3s linear;
+  transition:all .3s linear;
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+} */
+
+
+
+/* .forward .view-animate.ng-enter {
+  left:-100%;
+}
+.forward .view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.forward .view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}
+
+
+.back .view-animate.ng-enter {
+  left:100%;
+}
+.back .view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.back .view-animate.ng-leave.ng-leave-active {
+  left:100%;
+} */
