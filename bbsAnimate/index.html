@@ -62,18 +62,17 @@
         <div ng-show="loading" class="app-content-loading">
           <i class="fa fa-spinner fa-spin loading-spinner"></i>
         </div>
-
-        <div class="app-content">
+        <div class="app-content pos-rel">
           
           <!-- // Post list  -->
           <div class="scrollable list-page" ng-show="show_page_post_list"> 
-            <div class="scrollable-content" ui-scroll-bottom='loadmore()' ui-scroll-top="refresh()">
+            <div class="scrollable-content bg-clr-main" ui-scroll-bottom='loadmore()' ui-scroll-top="refresh()">
               <div class="list-group">
                 <div ng-show="refreshAction" class="app-content-loading small">
                   <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
                 </div>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-home media post-item" ng-click="postList2post(post)" ng-repeat="post in list">
+                    <a class="mg-10 pd-10 radius-5 list-group-item media post-item" ng-click="postList2post(post)" ng-repeat="post in list">
                         <div class="pull-left user">
                             <img ng-src="{{post.headPortraitUrl}}" class="head-portrait-70">
                             <div class="user-name">{{post.writerName}}</div>
@@ -81,7 +80,7 @@
                         <div class="media-body">
                           <div class="media-heading">{{post.postTitle}}</div>
                           <div class="dividing-line"></div>
-                          <div><span class="pull-right post-time">发表于{{post.postTime}}</span></div>
+                          <div class="post-time pull-right">发表于{{post.postTime}}</div>
                         </div>
                     </a>
                 </div>
@@ -95,9 +94,8 @@
           <!-- // Post detail  -->
           <div class="{{page_nav}}">
             <div class="scrollable post-page"  ng-show="show_page_post">  
-              <div class="scrollable-content"  ng-swipe-right="showHome()">
-                <div class="post-detail">
-                
+              <div class="scrollable-content post-detail bg-white"  ng-swipe-right="showHome()">
+                <div class="bg-clr-main pd-t-b-10 pd-l-r-20">
                   <div ng-show="loading_detail">
                     <i class="fa fa-spinner fa-spin loading-spinner"></i>
                   </div>
@@ -109,35 +107,38 @@
                       <div class="post-time">发表于{{post.postTime}}</div>                    
                     </div>   
                     <div class="clearfix"></div> 
-                  </div>   
-                  <div class="post-content">{{post.postContent}}</div>           
+                  </div>
+                  <div class="post-content">{{post.postContent}}</div> 
+                  <div class="dividing-line2"></div>          
                   <div class="comment-count"><span>评论&nbsp;({{post.commentCount}})</span></div>
-                 
+                 </div>
                   <div class="list-group comment-list" ng-show="!loading_detail">
-                    <a class="list-group-item list-group-item-home comment-item" ng-click="post2comment(comment)" ng-repeat="comment in post.commentList">
+                    <a class="list-group-item comment-item pd-t-b-10 pd-l-r-20" ng-click="post2comment(comment)" ng-repeat="comment in post.commentList">
                       <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait-60 pull-left">
-                      <div class="media-body">
-                        <div>{{comment.commenterName}}</div>
-                        <div>{{comment.commentTime}}</div>
-                        <div>{{comment.commentContent}}</div>
+                      <div class="media-body pd-l-15">
+                        <div class="commenter-name">{{comment.commenterName}}</div>
+                        <div class="comment-time">{{comment.commentTime}}</div>
+                        <div class="comment-content">{{comment.commentContent}}</div>
+                        <div class="dividing-line3"></div>
                       </div>                    
                     </a>
-                  </div>
-                </div>              
+                  </div>           
               </div>
             </div>
           </div>
 
           <!-- // Comment -->
           <div class="scrollable comment-page" ng-show="show_page_comment">  
-            <div class="scrollable-content">
+            <div class="scrollable-content comment-detail bg-clr-main">
+              <div class="commenter-info">
               <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait-70 pull-left">
               <div class="media-body">
-                  <div>{{comment.commenterName}}</div>
-                  <div>{{comment.commentTime}}</div>                 
+                  <div class="commenter-name">{{comment.commenterName}}</div>
+                  <div class="comment-time">{{comment.commentTime}}</div>                 
               </div>
               <div class="clearfix"></div>
-              <div class="post-content">{{comment.commentContent}}</div>
+              </div>
+              <div class="comment-content">{{comment.commentContent}}</div>
             </div>
           </div>
 
