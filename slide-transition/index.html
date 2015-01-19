@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TPOOO 托福批改</title>
+
+<style >
+	
+
+.box {
+	width: 400px;
+	padding: 15px;
+	background-color: #f0f3f9;
+}
+.container {
+	height: 0;
+	
+	-webkit-transition: height 0.6s;
+	-moz-transition: height 0.6s;
+	-o-transition: height 0.6s;
+	transition: height 0.6s;
+	
+	position: relative;
+	_position: static;
+	overflow: hidden;
+}
+.container .wrap {
+	display: inline-block;
+	*display: inline;
+	/* border: 20px solid #333; */
+	*zoom: 1;
+}
+:root .container .wrap {
+	position: absolute;
+	bottom: 0;
+}
+
+
+
+</style>
+
+  </head>
+  <body>
+  	
+<div id="effect" class="part">
+        	<h3>效果：</h3>
+            <div class="show">
+            	<div class="demo">
+                	<div class="box">
+                    	<p><a href="javascript:" id="button" data-rel="more">点击我</a></p>
+                        <div id="more" class="container" style="height: 0px;">
+                        	<div class="wrap">
+                                <div id="textContent">display表示默认更多展开元素是显示状态还是隐藏
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script >
+	
+
+var slideToggleTrans = function(element, display) { 
+//  display表示默认更多展开元素是显示状态还是隐藏
+	if (typeof window.screenX === "number") {
+		// 现代浏览器
+		element.addEventListener("click", function() {
+			var textContentElm = document.querySelector("#textContent");	
+			display = !display;
+			if(display){
+				textContentElm.innerText = "认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还";
+			}else{
+				textContentElm.innerText = "认更多展";
+			}
+			
+			
+			var rel = this.getAttribute("data-rel"), eleMore = document.querySelector("#" + rel);	
+
+			eleMore && (eleMore.style.height = display? (function() {
+				var height = 0;
+				Array.prototype.slice.call(eleMore.childNodes).forEach(function(child) {
+					if (child.nodeType === 1) {
+						var oStyle = window.getComputedStyle(child);
+						height = child.clientHeight + (parseInt(oStyle.borderTopWidth) || 0) + (parseInt(oStyle.borderBottomWidth) || 0);
+					}
+				});	
+				return height;
+			})() + "px": "0px");
+
+		});
+	} else {
+		// IE6-IE8浏览器
+		element.attachEvent("onclick", function() {	
+			display = !display;
+			var rel = element.getAttribute("data-rel"), eleMore = document.getElementById(rel);
+			eleMore && (eleMore.style.height = display? "auto": "0px");
+			return false;
+		});
+	}
+};
+
+// 应用渐进使用transition交互的slideToggle效果
+slideToggleTrans(document.getElementById("button"));
+
+
+
+
+</script>
+  </body>
+</html>

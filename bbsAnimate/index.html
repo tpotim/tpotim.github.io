@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="dist/angularui/css/mobile-angular-ui-base.min.css" />
     <link rel="stylesheet" href="dist/angularui/css/mobile-angular-ui-desktop.min.css" />
     <link rel="stylesheet" href="css/app.css" />
+    <script src="dist/jquery/jquery.min.js"></script>
     <script src="dist/angularjs/angular.min.js"></script>
     <script src="dist/angularjs/angular-touch.min.js"></script>
     <script src="dist/angularjs/angular-animate.min.js"></script>
@@ -72,7 +73,7 @@
                   <i class="fa fa-spinner fa-spin loading-spinner small"></i> 刷新
                 </div>
                 <div class="list-group">
-                    <a class="mg-10 pd-10 radius-5 list-group-item media post-item" ng-click="postList2post(post)" ng-repeat="post in list">
+                    <a class="list-group-item media post-item" ng-click="postList2post(post)" ng-repeat="post in list">
                         <div class="pull-left user">
                             <img ng-src="{{post.headPortraitUrl}}" class="head-portrait-70">
                             <div class="user-name">{{post.writerName}}</div>
@@ -95,7 +96,7 @@
           <div class="{{page_nav}}">
             <div class="scrollable post-page"  ng-show="show_page_post">  
               <div class="scrollable-content post-detail bg-white"  ng-swipe-right="showHome()">
-                <div class="bg-clr-main pd-t-b-10 pd-l-r-20">
+                <div class="top-part bg-clr-main">
                   <div ng-show="loading_detail">
                     <i class="fa fa-spinner fa-spin loading-spinner"></i>
                   </div>
@@ -108,21 +109,35 @@
                     </div>   
                     <div class="clearfix"></div> 
                   </div>
-                  <div class="post-content">{{post.postContent}}</div> 
-                  <div class="dividing-line2"></div>          
-                  <div class="comment-count"><span>评论&nbsp;({{post.commentCount}})</span></div>
+                  <div class="post-content">{{post.postContent}}</div>
+
+                  
                  </div>
+
+                 <div class="part2 {{fullContent}}">
+                   <div class="more-content-toggle bg-clr-main" ng-click="showFullPost()">
+                      <i class="fa fa-angle-down" ng-show="postContentCollapse"></i> 
+                      <i class="fa fa-angle-up" ng-hide="postContentCollapse"></i> 
+                    </div> 
+                    <div class="dividing-line2"></div> 
+                   <div class="comment-count bg-clr-main"><span>评论&nbsp;({{post.commentCount}})</span></div>
+                  
+                 
                   <div class="list-group comment-list" ng-show="!loading_detail">
-                    <a class="list-group-item comment-item pd-t-b-10 pd-l-r-20" ng-click="post2comment(comment)" ng-repeat="comment in post.commentList">
+                    <a class="list-group-item comment-item " ng-click="post2comment(comment)" ng-repeat="comment in post.commentList">
                       <img ng-src="{{comment.headPortraitUrl}}" class="head-portrait-60 pull-left">
-                      <div class="media-body pd-l-15">
+                      <div class="media-body">
                         <div class="commenter-name">{{comment.commenterName}}</div>
                         <div class="comment-time">{{comment.commentTime}}</div>
                         <div class="comment-content">{{comment.commentContent}}</div>
                         <div class="dividing-line3"></div>
                       </div>                    
                     </a>
-                  </div>           
+                  </div> 
+
+                  </div> 
+
+
               </div>
             </div>
           </div>
