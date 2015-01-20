@@ -1,0 +1,19 @@
+﻿
+
+
+DOM: offsetHeight, clientHeight与scrollHeight
+http://msdn.microsoft.com/en-us/library/ie/ms533563%28v=vs.85%29.aspx
+https://developer.mozilla.org/zh-CN/docs/DOM/element.clientHeight
+http://www.cnblogs.com/top5/archive/2010/08/23/1806389.html
+
+
+
+
+getComputedStyle
+
+http://caniuse.com/#search=getComputedStyle
+
+https://docs.webplatform.org/wiki/dom/Window/getComputedStyle
+
+
+古诗文网 http://www.gushiwen.org/

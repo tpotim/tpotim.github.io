@@ -25,16 +25,11 @@ app.controller('MainController', function($scope, $http, $timeout, $filter){
         $http.get("json/post.json")
           .success(function(response){
             $timeout(function(){
-              $scope.post = response;
-              //$scope.post.fullContent = response.postContent;
+              $scope.post = response; 
 
-              debugger;
-              if(response.postContent.length > 80){
-                //$scope.post.postContent = response.postContent.substring(0,80) + " ...";
-                $scope.postContentCollapse = true;
-                $scope.postContentCollapseText = "展开";
-              }
-      
+              $scope.postContentCollapse = true;
+
+              $scope.post.postTitle = post.postTitle;
               $scope.post.headPortraitUrl = post.headPortraitUrl;
               $scope.post.writerName = post.writerName;
               $scope.post.postTime = post.postTime;
@@ -43,27 +38,16 @@ app.controller('MainController', function($scope, $http, $timeout, $filter){
           });
       }
 
-      $scope.showFullPost = function(){
-        // 展开
-        if($scope.postContentCollapse === true){
-          //$scope.post.postContent = $scope.post.fullContent;
-          $scope.postContentCollapse = false;
-          $scope.fullContent = "full-content";
-          $timeout(function(){
-            
-          }, 10)
+      $scope.collapsePostText = function(){
+        $scope.postContentCollapse = !$scope.postContentCollapse;
+        var container = document.querySelector(".post-text-container");
+        var textContentHeight = document.querySelector('.post-text-content').clientHeight + 'px';
+        if($scope.postContentCollapse){
+          container.style.height = '56px';
+        }else{
+          container.style.height = textContentHeight;
         }
-        // 折叠
-        else if($scope.postContentCollapse === false){
-          //$scope.post.postContent = $scope.post.fullContent.substring(0,80);
-          $scope.postContentCollapse = true;
-          $scope.fullContent = null;
-          $timeout(function(){
-            
-          }, 10)
-        }
-
-        
+               
       }
 
       $scope.post2comment = function(comment){        

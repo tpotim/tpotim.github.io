@@ -8,12 +8,12 @@
 	
 
 .box {
-	width: 400px;
+	width: 200px;
 	padding: 15px;
 	background-color: #f0f3f9;
 }
 .container {
-	height: 0;
+	height: 20;
 	
 	-webkit-transition: height 0.6s;
 	-moz-transition: height 0.6s;
@@ -25,47 +25,40 @@
 	overflow: hidden;
 }
 .container .wrap {
-	display: inline-block;
-	*display: inline;
-	/* border: 20px solid #333; */
-	*zoom: 1;
-}
-:root .container .wrap {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 }
 
 
 
 </style>
 
+
   </head>
   <body>
   	
 <div id="effect" class="part">
-        	<h3>效果：</h3>
-            <div class="show">
-            	<div class="demo">
-                	<div class="box">                    	
-                        <div id="more" class="container" style="height: 0px;">
+        	<h3> </h3>
+            <div class="box">                  	
+                        <div id="more" class="container" style="height: 20px;">
                         	<div class="wrap">
-                                <div id="textContent">认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还
-                                
+                                <div id="textContent">认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还认更多展开元素是显示状态还                                
                                 </div>
+                                <span>ccccc</span>
+                                <img src="http://image.zhangxinxu.com/image2/study/s/s256/mm1.jpg" height="191">
+                         
                             </div>
                         </div>
-                        <p><a href="javascript:" id="button" data-rel="more">点击我</a></p>
-                    </div>
-                </div>
+                        <p><a href="javascript:" id="button" data-rel="more">折叠/展开</a></p>
+                 
             </div>
+            <div>jiangyou</div>
         </div>
 <script >
 	
 
 var slideToggleTrans = function(element, display) { 
-//  display表示默认更多展开元素是显示状态还是隐藏
-	if (typeof window.screenX === "number") {
-		// 现代浏览器
+
 		element.addEventListener("click", function() {
 			var textContentElm = document.querySelector("#textContent");	
 			display = !display;
@@ -86,15 +79,7 @@ var slideToggleTrans = function(element, display) {
 			})() + "px": "20px");
 
 		});
-	} else {
-		// IE6-IE8浏览器
-		element.attachEvent("onclick", function() {	
-			display = !display;
-			var rel = element.getAttribute("data-rel"), eleMore = document.getElementById(rel);
-			eleMore && (eleMore.style.height = display? "auto": "0px");
-			return false;
-		});
-	}
+	
 };
 
 // 应用渐进使用transition交互的slideToggle效果
