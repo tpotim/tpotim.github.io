@@ -1,8 +1,0 @@
-http://greengerong.github.io/ 破狼 Blog
-
-http://www.csdn.net/article/2013-09-18/2816972-AngularJS-performance-tuning-for-long-list
-
-
-
-优化：
-
