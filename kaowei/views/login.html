@@ -1,0 +1,41 @@
+<div class="home-page">
+    <div class="title1 center">绑定托福</div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="mdi-action-account-circle prefix"></i>
+        <input id="neeaId" type="text" ng-model="loginForm.neeaId" ng-change="checkForm()">
+        <label for="neeaId">NEEA用户ID</label>
+        <div class="red-text" ng-show="idValid">请输入用户ID</div>
+      </div>
+      <div class="input-field col s12">
+        <i class="mdi-action-lock prefix"></i>
+        <input id="password" type="password" ng-model="loginForm.password" ng-change="checkForm()">
+        <label for="password">密码</label>
+        <div class="red-text" ng-show="passwordValid">请输入密码</div>
+      </div>
+      <div class="input-field col s12">
+        <i class="mdi-communication-stay-current-portrait prefix"></i>
+        <input id="phoneNum" type="text" ng-model="loginForm.phoneNum" ng-change="checkForm()">
+        <label for="phoneNum">手机号码</label>
+        <div class="red-text" ng-show="phoneValid">请输入手机号码</div>
+      </div>
+      <div class="input-field col s7">
+        <i class="mdi-action-dns prefix"></i>
+        <input id="checkNum" type="text" ng-model="loginForm.checkNum" ng-change="checkForm()">
+        <label for="checkNum">验证码</label>
+        <div class="red-text" ng-show="verifyCodeValid">请输入正确的验证码</div>
+      </div>
+      <div class="input-field col s5">
+        <button class="btn deep-orange1-text id-code-btn center" ng-class="{'waves-effect waves-light waves-orange': !isGetVerifyCode, disabled:isGetVerifyCode }" ng-click="getVerifyCode()" ng-disabled="isGetVerifyCode">获取验证码 ({{second}})</button>
+      </div>      
+    </div> 
+
+    <div class="center">
+      <button class="btn form-control confirm-bind-btn " ng-class="{'waves-effect waves-light deep-orange1': formValid, disabled:!formValid }" ng-click="submitBind()" ng-disabled="!formValid">确认绑定</button>  
+    </div>
+
+    <div class="red-text text-darken-1 font-12">
+      请务必保证账号密码不变更，否则将导致触发通知失败
+    </div>
+  </div>

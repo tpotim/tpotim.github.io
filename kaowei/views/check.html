@@ -1,0 +1,26 @@
+<div class="page center deep-orange1 pd-tp75">
+    <img class="score-img1" src="img/c11_03.png" alt="">
+    <div class="row center fs16 mg-bt40">
+      <div class="col s12 white-text">NEEA ID</div>
+      <div class="col s12 deep-red1-text">3531970</div>
+    </div>
+    <div class="row center fs14">
+      <div class="col s6">
+        <button class="waves-effect waves-light btn white deep-orange1-text" ng-click="showScore()">查看分数</button>
+      </div>
+      <div class="col s6">
+        <button class="waves-effect waves-light btn white deep-orange1-text" ng-click="unbind()">解除绑定</button>
+      </div>
+    </div>
+    <div class="score-tip1 fs14 white-text">
+      成功获取免费出分通知特权请注意保持账号密码不变更，否则将导致出分通知失败
+    </div>
+    <img class="score-cloud1" src="img/a1_03.png" alt="">
+    <img class="score-cloud2" src="img/a3_10.png" alt="">
+  </div>
+
+  <div class="overlay center" ng-show="showConfirmLayer">
+    <div class="white-text center fs18 unbind-tip">真的要取消绑定吗</div>
+    <button class="waves-effect waves-light btn unbind-btn fs16 white-text" ng-click="doUnbind()">解除绑定</button>
+    <button class="waves-effect waves-light btn think-unbind-btn fs16 white-text" ng-click="thinkTwice()">我再想想</button>
+  </div>

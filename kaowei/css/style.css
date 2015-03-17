@@ -1,0 +1,290 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+.body-bg{
+	background-color:#F0F0F0;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.light-grey1{
+	background-color: #F0F0F0 !important;
+}
+.deep-orange1{
+	background-color: #FF794C !important;
+}
+.deep-orange1-text{
+	color: #FF794C; 
+}
+.deep-red1-text{
+	color: #6f3623;
+}
+.fs14{
+	font-size: 14px;
+}
+.fs16{
+	font-size: 16px;
+}
+.fs18{
+	font-size: 18px;
+}
+.fs20{
+	font-size: 20px;
+}
+.mg-tp35{
+	margin-top: 35px;
+}
+.mg-bt40{
+	margin-bottom: 40px;
+}
+.mg-bt60{
+	margin-bottom: 60px;
+}
+.pd-tp75{
+	padding-top: 75px;
+}
+.pd-tp45{
+	padding-top: 45px;
+}
+.waves-effect.waves-brown .waves-orange {
+  background-color: #FF794C;
+}
+
+.home-page{
+	padding:0 15px;
+}
+.title1{
+	margin:16px auto 6px auto; 
+	font-size:36px;
+}
+.id-code-btn{
+	border:1px solid #FF794C;
+	background-color:#fff !important;
+	font-size:13px;
+	margin-top:7px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.confirm-bind-btn{
+	font-size:16px;
+	height:44px;
+}
+.share-page{
+	padding-top:75px;
+}
+.share-img1{
+	width:38%;
+	display: block;
+	margin: 0 auto;
+}
+.share-img2{
+	display: block;
+	margin: 28px auto 78px auto;
+	width:74%;
+}
+.share-btn{
+	width:64%;
+	background-color:#fff;
+	font-size:16px;
+	height:44px;
+}
+.score-cloud1{
+  position: absolute;
+  width: 17%;
+  top: 18px;
+  right: 20%;
+}
+.score-cloud2{
+  position: absolute;
+  width: 9.5%;
+  top: 93px;
+  right: 0;
+}
+
+.score-img1{
+	width:38%;
+}
+
+.score-tip1{
+	padding:0 20px; 
+	text-align:left;
+	letter-spacing: 1px;
+}
+
+.score-detail-page{
+	background-color:#f0f0f0;
+	padding:16px 14px 0 14px;
+}
+.card.test-score-card{
+	border-radius:4px;
+}
+
+.test-score-card .card-content{
+  padding: 10px 8px 12px 8px;
+}
+.test-score-dividing-line{
+  height: 1px;
+  background-image: url('../img/xuxian_11.png');
+  margin: 0 -10px;
+  margin-bottom: 15px;
+}
+.test-score-dividing-line2{
+  height: 1px;
+  background-image: url('../img/xuxian_11.png');
+  margin: 0 -10px;
+  opacity: 0.8;
+}
+.test-score-card .row{
+  margin-bottom: 26px;
+}
+.test-score-card .col{
+  padding: 0 0;
+}
+.test-score-card .row.last-item-row{
+  margin-bottom: 20px;
+}
+.test-score-card .row.title-row{
+  margin-bottom: 12px;
+}
+.test-score-card .row.total-row{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.text-right-align{
+  text-align: right;
+}
+.test-score-card .score-right-align{
+  text-align: right;
+  padding-right: 65px;
+}
+.show-score-btn{
+	width:64%;
+	height:44px;
+}
+.unbind-img1{
+	width: 25%;
+	display: block;
+	margin: 0 auto;
+}
+.rebind-btn{
+	width:64%;
+	height:44px;
+}
+
+.input-field label {
+ 	color: #000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label, .input-field input[type=tel]:focus + label, .input-field input[type=password]:focus + label {
+ 	color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus, .input-field input[type=tel]:focus, .input-field input[type=password]:focus {
+	border-bottom: 1px solid #000;
+	box-shadow: 0 1px 0 0 #000;
+}
+
+/* invalid color */
+.input-field.invalid input[type=text], .input-field.invalid input[type=tel], .input-field.invalid input[type=password] {
+	border-bottom: 1px solid #ff2200;
+	box-shadow: 0 1px 0 0 #ff2200;
+	color: #ff2200;
+}
+
+.input-field.invalid label {
+ 	color: #ff2200;
+}
+
+.input-field.invalid input[type=text]:focus + label, .input-field.invalid input[type=tel]:focus + label, .input-field.invalid input[type=password]:focus + label {
+ 	color: #ff2200;
+}
+/* label underline focus color */
+.input-field input[type=text].invalid:focus, .input-field input[type=tel].invalid:focus, .input-field input[type=password].invalid:focus {
+	border-bottom: 1px solid #ff2200;
+	box-shadow: 0 1px 0 0 #ff2200;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #000;
+}
+
+.font-12{
+	font-size: 12px;
+}
+
+.home-page .row .col{
+	padding-left: 0px;
+}
+
+.home-page .input-field .red-text{
+	margin-left: 40px;
+	font-size: 12px;
+}
+
+.loading{
+	margin-top: 200px;
+}
+
+.form-control{
+	width: 100%;
+}
+
+.hide{
+	display: none;
+}
+.overlay{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 115%;
+	width: 100%;
+	background: #000;
+	opacity: 0.8;
+	will-change: opacity;	
+}
+
+.overlay-img1{
+	position:absolute;
+	width:65%;
+	right:9%;
+	top:5px;
+}
+.unbind-tip{
+	margin-top:80px;
+	margin-bottom:78px;
+	letter-spacing:3px;
+}
+.unbind-btn{
+	margin-bottom:40px;
+	width:64%;
+	background-color:transparent;
+	border:1px solid #fff;
+	height:44px;
+	letter-spacing:3px;
+}
+.think-unbind-btn{
+	margin-bottom:40px;
+	width:64%;
+	background-color:transparent;
+	border:1px solid #fff;
+	height:44px;
+	letter-spacing:3px;
+}
+.collapsible{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: 0;
+	margin: 0;
+}
+.collapsible-body{
+	border:0;
+}
