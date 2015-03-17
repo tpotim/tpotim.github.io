@@ -2,15 +2,15 @@
 app.controller('checkCtrl', function($rootScope, $scope, $http, $routeParams, $location){
 
 	$rootScope.body_bg = 'deep-orange1';
-	$scope.showConfirmLayer = false;
+	$scope.showModalLayer = false;
 	$scope.showScore = function(){
 		$location.url('/detail');
 	}
 	$scope.unbind = function(){
-		$scope.showConfirmLayer = true;
+		$scope.showModalLayer = true;
 	}
 	$scope.thinkTwice = function(){
-		$scope.showConfirmLayer = false;		
+		$scope.showModalLayer = false;		
 	}
 	$scope.doUnbind = function(){
 		var success = true;
@@ -26,16 +26,22 @@ app.controller('checkCtrl', function($rootScope, $scope, $http, $routeParams, $l
 // detailCtrl
 app.controller('detailCtrl', function($rootScope, $scope, $http, $routeParams){
 	$rootScope.body_bg = 'light-grey1';
-	$('.collapsible').collapsible();
-	$('.bt11').click(function(){
+
+	$('.btn-more').click(function(){
+
+	  $('.more-test-score').slideDown();
       $(this).hide();
-      $('.bt22').show();
-      $('.trgg').click();
+      //$('.btn-less').show();
       
     })
-    $('.bt22').click(function(){
+    $('.btn-less').click(function(){
+    	$('.more-test-score').slideUp();
       $(this).hide();
-      $('.trgg').click();
-      $('.bt11').show();
+      $('.btn-more').show();
     })
+});
+
+
+app.controller('shareCtrl', function($scope){
+	$scope.showModalLayer = true;
 });
