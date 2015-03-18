@@ -1,5 +1,31 @@
+//------ v2 --------
+1.首页
+
+请求地址（正式）： http://fz.tpooo.com/kaowei/interface/InterToefl/is_bind
+请求地址（预发）： http://fz1.tpooo.com/kaowei/interface/InterToefl/is_bind
+
+2. 提交绑定：
+
+请求地址（正式）：http://fz.tpooo.com/kaowei/interface/InterToefl/commitBind
+请求地址（预发）：http://fz1.tpooo.com/kaowei/interface/InterToefl/commitBind
+
+checkNum字段程序里是写死的， 每次提交验证码为8888就可以了
 
 
+3. 解除绑定
+
+请求地址（正式）：http://fz.tpooo.com/kaowei/interface/InterToefl/unbind
+请求地址（预发）：http://fz1.tpooo.com/kaowei/interface/InterToefl/unbind
+
+4. 查看分数
+
+请求地址（正式）：http://fz.tpooo.com/kaowei/interface/InterToefl/findScore
+请求地址（预发）：http://fz1.tpooo.com/kaowei/interface/InterToefl/findScore
+
+
+
+
+//------ v1 --------
 1. 首页
 request:   GET /firstpage/:wechatCode
 response:  {
