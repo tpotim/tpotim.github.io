@@ -1,0 +1,55 @@
+
+
+1. 首页
+request:   GET /firstpage/:wechatCode
+response:  {
+			 "pageName": "login"|"check",      // 填写绑定信息 | 已绑定
+			 "showScoreBtn": true | false,      // pagename!=login,显示查看分数btn
+			 "memberID":12345
+		   }
+
+2. 提交绑定
+request:   POST /bind/:memberID
+		   {
+		     "neeaId": "1234",
+		     "password": "****",
+		     "phoneNum": "13212341234",
+		     "checkNum": "123456"
+		   }
+
+response:  {
+			 "success": true | false	
+		   }
+
+3. 解除绑定
+request:   GET /unbind/:memberID
+
+response:  {
+		     "success": true | false	
+	       }
+
+4. 查看分数
+request:   GET /scoreDetail/:memberID
+response:  [
+			  {
+			  	"name": "Tom",
+				"testDate": "2015-3-5",
+				"reading": 40,
+				"listening": 40,
+				"speaking": 40,
+				"writing": 40,
+				"total": 160
+				},
+
+				{
+			  	"name": "Tom",
+				"testDate": "2015-2-5",
+				"reading": 40,
+				"listening": 40,
+				"speaking": 40,
+				"writing": 40,
+				"total": 160
+				},
+
+				...								
+			]

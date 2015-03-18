@@ -1,106 +1,82 @@
-<div>
- 
-  
-  <div class="page score-detail-page">
-    
+<div class="page score-detail-page">
+  <div class="card test-score-card fs16">
+    <div class="card-content">
+      <div class="row title-row">
+        <div class="col s6">Test Date&nbsp;&nbsp;{{latestScore.testDate}}</div>
+        <div class="col s6 text-right-align">NAME&nbsp;&nbsp;{{latestScore.name}}&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      </div>
+      <div class="test-score-dividing-line"></div>
+      <div class="row">
+        <div class="col s6">Reading</div>
+        <div class="col s6 score-right-align">{{latestScore.reading}}</div>
+      </div>
+      <div class="row">
+        <div class="col s6">Listening</div>
+        <div class="col s6 score-right-align">{{latestScore.listening}}</div>
+      </div>
+      <div class="row">
+        <div class="col s6">Speaking</div>
+        <div class="col s6 score-right-align">{{latestScore.speaking}}</div>
+      </div>
+      <div class="row last-item-row">
+        <div class="col s6">Writing</div>
+        <div class="col s6 score-right-align">{{latestScore.writing}}</div>
+      </div>
+      <div class="test-score-dividing-line2"></div>
+      <div class="row total-row">
+        <div class="col s6">Total</div>
+        <div class="col s6 score-right-align">{{latestScore.total}}</div>
+      </div>
+    </div>
+  </div>
 
-  <div class="card test-score-card fs16" style="height:200px;overflow:hidden;">
-            <div class="card-content">
-              <div class="row title-row">
-                <div class="col s6">Test Date  2015-3-5</div>
-                <div class="col s6 text-right-align">NAME&nbsp;&nbsp;郭嘉莹</div>
-              </div>
-              <div class="test-score-dividing-line"></div>
-              <div class="row">
-                <div class="col s6">Reading</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="row">
-                <div class="col s6">Listening</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="row">
-                <div class="col s6">Speaking</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="row last-item-row">
-                <div class="col s6">Writing</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="test-score-dividing-line2"></div>
-              <div class="row total-row">
-                <div class="col s6">Total</div>
-                <div class="col s6 score-right-align">160</div>
-              </div>
-            </div>
-          </div>
-
-
-    <div class="collapsible" data-collapsible="accordion" >
-              
-        <div class="collapsible-header center trgg hide">          
-          <i class="mdi-navigation-expand-more" style="margin: 0 auto;"></i>
+  <div class="more-test-score-slider hide">
+    <div class="card test-score-card fs16" ng-repeat="scoreItem in otherScore">
+      <div class="card-content">
+        <div class="row title-row">
+          <div class="col s6">Test Date&nbsp;&nbsp;{{scoreItem.testDate}}</div>
+          <div class="col s6 text-right-align">NAME&nbsp;&nbsp;{{scoreItem.name}}&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </div>
-        <div class="collapsible-body">
-          <div class="card test-score-card fs16">
-            <div class="card-content">
-              <div class="row title-row">
-                <div class="col s6">Test Date  2015-3-5</div>
-                <div class="col s6 text-right-align">NAME&nbsp;&nbsp;郭嘉莹</div>
-              </div>
-              <div class="test-score-dividing-line"></div>
-              <div class="row">
-                <div class="col s6">Reading</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="row">
-                <div class="col s6">Listening</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="row">
-                <div class="col s6">Speaking</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="row last-item-row">
-                <div class="col s6">Writing</div>
-                <div class="col s6 score-right-align">40</div>
-              </div>
-              <div class="test-score-dividing-line2"></div>
-              <div class="row total-row">
-                <div class="col s6">Total</div>
-                <div class="col s6 score-right-align">160</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row center">
-            <button class="btn btn-less"><i class="mdi-navigation-expand-less"></i></button>      
-          </div>             
-
-        </div>      
-
-    </div>
-
-    <div class="row center">
-      <button class="btn btn-more"><i class="mdi-navigation-expand-more"></i></button>    
-    </div>
-    <div class="row center">
-      <button class="waves-effect waves-light btn show-score-btn deep-orange1 white-text fs16" >晒分炫耀</button>
+        <div class="test-score-dividing-line"></div>
+        <div class="row">
+          <div class="col s6">Reading</div>
+          <div class="col s6 score-right-align">{{scoreItem.reading}}</div>
+        </div>
+        <div class="row">
+          <div class="col s6">Listening</div>
+          <div class="col s6 score-right-align">{{scoreItem.listening}}</div>
+        </div>
+        <div class="row">
+          <div class="col s6">Speaking</div>
+          <div class="col s6 score-right-align">{{scoreItem.speaking}}</div>
+        </div>
+        <div class="row last-item-row">
+          <div class="col s6">Writing</div>
+          <div class="col s6 score-right-align">{{scoreItem.writing}}</div>
+        </div>
+        <div class="test-score-dividing-line2"></div>
+        <div class="row total-row">
+          <div class="col s6">Total</div>
+          <div class="col s6 score-right-align">{{scoreItem.total}}</div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-  
-  <div class="overlay hide">
-    <img class="overlay-img1" src="img/b1_03.png" alt="">
+  <div class="row center">
+    <button class="btn btn-toggle hide">
+      <i class="mdi-navigation-expand-more"></i>
+      <i class="mdi-navigation-expand-less hide"></i>
+    </button>
   </div>
-  
+
+  <div class="row center">
+    <button class="waves-effect waves-light btn show-score-btn deep-orange1 white-text fs16" ng-click="share()">晒分炫耀</button>
+  </div>
+
   <div class="overlay center hide">
     <div class="white-text center fs18 unbind-tip">真的要取消绑定吗</div>
     <button class="waves-effect waves-light btn unbind-btn fs16 white-text">解除绑定</button>
     <button class="waves-effect waves-light btn think-unbind-btn fs16 white-text">我再想想</button>
   </div>
-
-
-
 </div>

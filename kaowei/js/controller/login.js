@@ -11,14 +11,13 @@ app.controller('loginCtrl', function($rootScope, $scope, $http, $routeParams, $i
 
   $rootScope.body_bg = 'light-grey1';
   
-
+  // 获取验证码
   $scope.getVerifyCode = function(){
-    sendCheckNum();
+    // 开始计时
     $scope.verifyCodeCounter();
-  }
 
-  function sendCheckNum(){
-
+    // 调用后台接口
+    // $http...
   }
 
   // 验证码计时器
@@ -55,6 +54,7 @@ app.controller('loginCtrl', function($rootScope, $scope, $http, $routeParams, $i
 
   // 提交绑定
   $scope.submitBind = function(){
+    // $http
     var success = true;
     if(success){
       $location.url('/check');
