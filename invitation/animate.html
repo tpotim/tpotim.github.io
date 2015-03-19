@@ -12,44 +12,105 @@
 	
 	
 	<style>
-
+		.hide{
+			display: none !important;
+		}
 		.page{
 			position: absolute;
 			top: 0;
-			bottom: 0;
 			left: 0;
-			right: 0
-		}
-		.bg-img{
 			width: 100%;
 			height: 100%;
 		}
+		.page img{
+			display: block;
+		}
+		.bg-img{
+			width: 100%;
+			height: 100%;	
+		}
 		.page1{
-			
+			z-index: 100;
 		}
 		.page2{
-			
+			z-index: 180;
+		}
+		.page5{
+			z-index: 300;
+		}
+		.page5 .text-yes{
+			position: absolute;
+			top: 30%;
+			left: 28%;
+			height: 58px;
+		}
+		.page5 .text-today{
+			position: absolute;
+			top: 42%;
+			left: 25%;
+			height: 107px;
+		}
+		.page5 .text-wenot{
+			position: absolute;
+			top: 31%;
+			left: 44%;
+			height: 130px;
+		}
+		.page5 .text-one{
+			position: absolute;
+			top: 58%;
+			left: 42%;
+			height: 80px;
+		}
+		.page5 .text-withyou{
+			position: absolute;
+			top: 50%;
+			left: 58%;
+			height: 212px;
+		}
+
+
+		.page2 .text-left{
+			position: absolute;
+			top: 20%;
+			left: 35%;
+			height: 207px;
+			-webkit-animation-duration: 1.8s;
+		}
+		.page2 .text-right{
+			position: absolute;
+			top: 16%;
+			right: 35%;
+			height: 381px;
+			-webkit-animation-duration: 1.8s;
 		}
 	</style>
 	<script>
 		$(function(){
-			$(".page1").on('touchstart',page_touchstart);
-			$(".page1").on('touchmove',page_touchmove);
-			$(".page1").on('touchend',page_touchend);
+			var animationEndStr = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+			setTimeout(function(){
+				$('.page2 .text-left').removeClass('hide').addClass('animated slideInDown');
+				$('.page2 .text-right').removeClass('hide').addClass('animated slideInUp');
+			},1000);
+
+			setTimeout(function(){
+				$('.page2 .text-left').removeClass('hide').addClass('animated slideOutDown');
+				$('.page2 .text-right').removeClass('hide').addClass('animated slideOutUp');
+			},3000);
 			
-			$(document).on("scrollstart",function(){
-			  //alert("Started scrolling!");
-			});
-		});
-		function page_touchstart(e){
+			setTimeout(function(){
+				$('.page5 .text-yes').removeClass('hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+					$('.page5 .text-today').removeClass('hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+							$('.page5 .text-wenot').removeClass('hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+									$('.page5 .text-one').removeClass('hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+											$('.page5 .text-withyou').removeClass('hide').addClass('animated fadeInDown');
+										});
+								});
+						});
+				});
+			},1000);
 
-		}
-		function page_touchmove(e){
-
-		}
-		function page_touchend(e){
-
-		}
+		})
 	</script>
 </head>
 <body>
@@ -60,6 +121,17 @@
 
 	<section class="page page2">
 		<img class="bg-img" src="img/er-img.jpg" alt="">
+		<img class="text-left hide" src="img/er-wezi-left.png" alt="">
+		<img class="text-right hide" src="img/er-wezi-right.png" alt="">
+	</section>
+
+	<section class="page page5">
+		<img class="bg-img" src="img/wu-img.jpg" alt="">
+		<img class="text-yes hide" src="img/wu-wezi-1.png" alt="">
+		<img class="text-today hide" src="img/wu-wezi-2.png" alt="">
+		<img class="text-wenot hide" src="img/wu-wezi-3.png" alt="">
+		<img class="text-one hide" src="img/wu-wezi-4.png" alt="">
+		<img class="text-withyou hide" src="img/wu-wezi-5.png" alt="">
 	</section>
 	</div>
 	
