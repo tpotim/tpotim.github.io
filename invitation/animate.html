@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="dist/css/animate.css">
+	<script src="dist/js/jquery/jquery-2.1.3.min.js"></script>
+	<script src="dist/js/jquery.mobile.custom/jquery.mobile.custom.js"></script>
+	
+	
+	<style>
+
+		.page{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0
+		}
+		.bg-img{
+			width: 100%;
+			height: 100%;
+		}
+		.page1{
+			
+		}
+		.page2{
+			
+		}
+	</style>
+	<script>
+		$(function(){
+			$(".page1").on('touchstart',page_touchstart);
+			$(".page1").on('touchmove',page_touchmove);
+			$(".page1").on('touchend',page_touchend);
+			
+			$(document).on("scrollstart",function(){
+			  //alert("Started scrolling!");
+			});
+		});
+		function page_touchstart(e){
+
+		}
+		function page_touchmove(e){
+
+		}
+		function page_touchend(e){
+
+		}
+	</script>
+</head>
+<body>
+	<div style="overflow:hidden;">
+	<section class="page page1">
+		<img class="bg-img" src="img/one-img.jpg" alt="">
+	</section>
+
+	<section class="page page2">
+		<img class="bg-img" src="img/er-img.jpg" alt="">
+	</section>
+	</div>
+	
+</body>
+</html>
