@@ -23,6 +23,7 @@ var Msize = $(".m-page").size(), 	//页面的数目
 	textNode		= [],			//文本对象
 	winHeight       = $(window).height(),
 	textInt			= 1;			//文本对象顺序
+	latsPageUp = false;
 	
 
 	
@@ -95,8 +96,15 @@ var Msize = $(".m-page").size(), 	//页面的数目
 	
 	//触摸移动（鼠标移动）开始函数
 	function page_touchmove(e){
+
+
 		e.preventDefault();
-		e.stopPropagation();	
+		e.stopPropagation();
+		moveP = window.event.touches[0].pageY;
+		latsPageUp = (moveP - initP <= 0);
+		if(page_n == 7 && latsPageUp){
+			return;
+		}
         var imgs = $(".m-img").length;
 
 		//判断是否开始或者在移动中获取值
@@ -182,6 +190,10 @@ var Msize = $(".m-page").size(), 	//页面的数目
 
 	//触摸结束（鼠标起来或者离开元素）开始函数
 	function page_touchend(e){	
+
+		if(page_n == 7 && latsPageUp){
+			return;
+		}
 			
 		//结束控制页面
 		startM =null;
