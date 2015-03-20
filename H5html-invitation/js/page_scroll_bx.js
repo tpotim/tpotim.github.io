@@ -138,8 +138,7 @@ var Msize = $(".m-page").size(), 	//页面的数目
 						if(!indexP) $('.audio_txt').addClass('close');
 						newM = page_n + 1 ;
 					}else{
-						return newM = 1 ;
-						
+						newM = 1 ;
 					}
 					$(".m-page").eq(newM-1).addClass("active").css("top",v_h);
 					move = true ;
@@ -154,11 +153,8 @@ var Msize = $(".m-page").size(), 	//页面的数目
 				
 					//移动中设置页面的值（top）
 					start = false;
-					var topV = parseInt($(".m-page").eq(newM-1).css("top"));					
-					if(page_n != 7 || topV+moveP-initP<0){
-						$(".m-page").eq(newM-1).css({'top':topV+moveP-initP});	
-					}
-
+					var topV = parseInt($(".m-page").eq(newM-1).css("top"));
+					$(".m-page").eq(newM-1).css({'top':topV+moveP-initP});	
 					
 				    /*if(topV+moveP-initP>0){//向上
 					   var bn1 = winHeight-(topV+moveP-initP);
@@ -274,7 +270,7 @@ var Msize = $(".m-page").size(), 	//页面的数目
 
 
 
-		}, 500);
+		}, 1000);
 	}
 
 
