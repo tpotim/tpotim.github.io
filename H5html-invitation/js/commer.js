@@ -12,7 +12,8 @@ $(document).ready(function(){
         })
     });
 
-    $('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated slideInDown');
-    $('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated slideInUp');
+
+    $('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated later slideInDown')
+    $('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated later slideInUp');
 
 });
