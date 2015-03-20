@@ -7,6 +7,9 @@
 
 $(document).ready(function(){
     $(".page-loading .page-fix .hang-load").animate({height:0}, 5000,function(){
-    	$(".page-loading").hide(1000);
+    	$(".page-fix").animate({top:23+"%"}, 3000,function(){
+            $(".page-loading").fadeOut(1500);
+        })
     })
+
 });
