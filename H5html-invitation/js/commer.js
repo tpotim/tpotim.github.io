@@ -6,11 +6,15 @@
 */
 
 $(document).ready(function(){
-    $(".page-loading .page-fix .hang-load").animate({height:0}, 5000,function(){
-    	$(".page-loading").fadeOut();    	
-    });
-
-    $('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated slideInDown');
-    $('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated slideInUp');
-
+    $(".page-loading .page-fix .hang-load").animate({height:0}, 5000);
 });
+
+ window.onload = function(){
+	$(".page-loading").fadeOut();
+	$('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated slideInDown');
+	$('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated slideInUp');
+}
+
+
+
+
