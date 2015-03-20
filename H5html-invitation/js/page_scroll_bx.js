@@ -159,14 +159,14 @@ var Msize = $(".m-page").size(), 	//页面的数目
 				    if(topV+moveP-initP>0){//向上
 					   var bn1 = winHeight-(topV+moveP-initP);
 					   var bn2 = ((winHeight-bn1/4)/winHeight);
-                       $(".m-page").eq(newM-2).attr("style","-webkit-transform:translate(0px,-"+bn1/4+"px) scale("+bn2+");opacity:0.2");
+                       $(".m-page").eq(newM-2).attr("style","-webkit-transform:translate(0px,-"+bn1/4+"px) scale("+bn2+")");
 				    }else{//向下
 					   var bn3 = winHeight+(topV+moveP-initP);
 					   var bn4 = ((winHeight-bn3/4)/winHeight);
 					   if(Msize!=newM){
-                         $(".m-page").eq(newM).attr("style","-webkit-transform:translate(0px,"+bn3/4+"px) scale("+bn4+");opacity:0.2");
+                         $(".m-page").eq(newM).attr("style","-webkit-transform:translate(0px,"+bn3/4+"px) scale("+bn4+")");
 					   }else{
-						 $(".m-page").eq(0).attr("style","-webkit-transform:translate(0px,"+bn3/4+"px) scale("+bn4+");opacity:0.2");  	
+						 $(".m-page").eq(0).attr("style","-webkit-transform:translate(0px,"+bn3/4+"px) scale("+bn4+")");  	
 					   }  
 				    }
 					initP = moveP;
@@ -239,7 +239,38 @@ var Msize = $(".m-page").size(), 	//页面的数目
 		}else{
 			$('.u-arrow').show();
 		}
+
+		animateImg($('.page'+page_n));
+		/*if(page_n == 2){
+			setTimeout(function(){
+				$('.page2 .text-img-wrap .left-img').removeClass('img-hide').addClass('animated slideInDown');
+				$('.page2 .text-img-wrap .right-img').removeClass('img-hide').addClass('animated slideInUp');
+			}, 500);			
+		}*/
 		
+		
+	}
+
+	function animateImg($page){
+		var animationEndStr = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		setTimeout(function(){
+			$page.find('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated slideInDown');
+			$page.find('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated slideInUp');
+
+			$page.find('.text-img-wrap .text-yes').removeClass('img-hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+					$('.text-img-wrap .text-today').removeClass('img-hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+							$('.text-img-wrap .text-wenot').removeClass('img-hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+									$('.text-img-wrap .text-one').removeClass('img-hide').addClass('animated fadeInDown').on(animationEndStr,function(){
+											$('.text-img-wrap .text-withyou').removeClass('img-hide').addClass('animated fadeInDown');
+										});
+								});
+						});
+				});
+
+
+
+
+		}, 500);
 	}
 
 

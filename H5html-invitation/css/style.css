@@ -1,0 +1,139 @@
+.img-hide{
+    display: none !important;
+}
+.page-loading{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    background: #000;
+}
+.page-loading .page-fix{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -30px;
+    overflow: hidden;
+    width: 200px;
+    height: 61px;
+}
+.page-loading .page-fix .hang-load{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    width: 200px;
+    height: 61px;
+    overflow: hidden;
+}
+.page-loading .page-fix .widths-load{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.text-img-wrap{
+    position: absolute;
+    left: 50%;
+    top: 15%;
+}
+.text-img-wrap>img{
+    display: block;
+    float: left;
+    position: relative;
+    right: 50%;
+}
+.page2 .text-img-wrap .left-img{
+    width: 76px;
+    margin-top: 38px;
+    margin-right: 5px;
+}
+.page2 .text-img-wrap .right-img{
+    width: 22px;
+}
+.page3 .text-img-wrap .left-img{
+    width: 80px;
+    margin-top: 30px;
+    margin-right: 5px;
+    margin-left: -5px;
+}
+.page3 .text-img-wrap .right-img{
+    width: 22px;
+}
+.page4 .text-img-wrap .left-img{
+    width: 100px;
+    margin-top: 38px;
+    margin-right: 3px;
+}
+.page4 .text-img-wrap .right-img{
+    width: 23px;
+}
+
+
+.img-up-curpor{
+    position: absolute;
+    left: 50%;
+    width: 30px !important;
+    height: 33px !important;
+    bottom: 5%;
+    margin-left: -15px;
+}
+.cont-wezi{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 92%;
+    padding:1% 4%;
+    background: url(../images/png.png) repeat left top;
+}
+.cont-wezi h1{
+    color: #ffcc66;
+    font-size: 1.1em;
+    font-weight: normal; 
+    line-height: 1.8em;
+}
+.cont-wezi p{
+    color: #ffffff;
+    font-size: 0.95em;
+    line-height: 1.4em;
+}
+.wu-img-left{
+    float: left;
+    width: 54px;
+    text-align: center;
+}
+.wu-img-left .text-yes{
+    width: 21px;
+}
+.wu-img-left .text-today{
+    width: 54px;
+    margin-top: 24px;
+}
+.wu-img-center{
+    margin-top: 20px;
+    float: left;
+    width: 31px;
+    text-align: center;
+    margin-left: 10px;
+}
+.wu-img-center .text-wenot{
+    width: 21px;
+}
+.wu-img-center .text-one{
+    width: 31px;
+    margin-top: 9px;
+}
+.wu-img-right{
+    margin-left: 10px;
+    margin-top: 106px;
+    width: 70px;
+    float: left;
+}
+.wu-img-right .text-withyou{
+    width: 70px;
+}
+.number-wrap{
+    margin-left: -87px;
+}
