@@ -254,8 +254,8 @@ var Msize = $(".m-page").size(), 	//页面的数目
 	function animateImg($page){
 		var animationEndStr = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 		setTimeout(function(){
-			$page.find('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated slideInDown');
-			$page.find('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated slideInUp');
+			$page.find('.text-img-wrap .left-img').removeClass('img-hide').addClass('animated fadeInDown');
+			$page.find('.text-img-wrap .right-img').removeClass('img-hide').addClass('animated fadeInUp');
 
 			$page.find('.text-img-wrap .text-yes').removeClass('img-hide').addClass('animated fadeInDown').on(animationEndStr,function(){
 					$('.text-img-wrap .text-today').removeClass('img-hide').addClass('animated fadeInDown').on(animationEndStr,function(){
