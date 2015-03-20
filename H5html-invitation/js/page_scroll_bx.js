@@ -23,7 +23,8 @@ var Msize = $(".m-page").size(), 	//页面的数目
 	textNode		= [],			//文本对象
 	winHeight       = $(window).height(),
 	textInt			= 1;			//文本对象顺序
-	latsPageUp = false;
+	pageUp = false;
+	//firstPageDown = false;
 	
 
 	
@@ -101,8 +102,11 @@ var Msize = $(".m-page").size(), 	//页面的数目
 		e.preventDefault();
 		e.stopPropagation();
 		moveP = window.event.touches[0].pageY;
-		latsPageUp = (moveP - initP <= 0);
-		if(page_n == 7 && latsPageUp){
+		pageUp = (moveP - initP <= 0);
+		if(page_n == 7 && pageUp){
+			return;
+		}
+		if(page_n == 1 && !pageUp){
 			return;
 		}
         var imgs = $(".m-img").length;
@@ -191,7 +195,10 @@ var Msize = $(".m-page").size(), 	//页面的数目
 	//触摸结束（鼠标起来或者离开元素）开始函数
 	function page_touchend(e){	
 
-		if(page_n == 7 && latsPageUp){
+		if(page_n == 7 && pageUp){
+			return;
+		}
+		if(page_n == 1 && !pageUp){
 			return;
 		}
 			
