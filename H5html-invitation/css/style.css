@@ -79,6 +79,8 @@
     height: 33px !important;
     bottom: 5%;
     margin-left: -15px;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+    animation: start 1.5s infinite ease-in-out;
 }
 .cont-wezi{
     position: absolute;
