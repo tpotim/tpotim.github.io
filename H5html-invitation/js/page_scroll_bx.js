@@ -156,7 +156,7 @@ var Msize = $(".m-page").size(), 	//页面的数目
 					var topV = parseInt($(".m-page").eq(newM-1).css("top"));
 					$(".m-page").eq(newM-1).css({'top':topV+moveP-initP});	
 					
-				    if(topV+moveP-initP>0){//向上
+				    /*if(topV+moveP-initP>0){//向上
 					   var bn1 = winHeight-(topV+moveP-initP);
 					   var bn2 = ((winHeight-bn1/4)/winHeight);
                        $(".m-page").eq(newM-2).attr("style","-webkit-transform:translate(0px,-"+bn1/4+"px) scale("+bn2+")");
@@ -168,7 +168,7 @@ var Msize = $(".m-page").size(), 	//页面的数目
 					   }else{
 						 $(".m-page").eq(0).attr("style","-webkit-transform:translate(0px,"+bn3/4+"px) scale("+bn4+")");  	
 					   }  
-				    }
+				    }*/
 					initP = moveP;
 				}else{
 					moveP = null;	
