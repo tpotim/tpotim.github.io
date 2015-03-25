@@ -35,6 +35,20 @@
 		.page2{
 			z-index: 180;
 		}
+		.page2 .text-left{
+			position: absolute;
+			top: 20%;
+			left: 35%;
+			height: 207px;
+			-webkit-animation-duration: 1.8s;
+		}
+		.page2 .text-right{
+			position: absolute;
+			top: 16%;
+			right: 35%;
+			height: 381px;
+			-webkit-animation-duration: 1.8s;
+		}
 		.page5{
 			z-index: 300;
 		}
@@ -70,20 +84,7 @@
 		}
 
 
-		.page2 .text-left{
-			position: absolute;
-			top: 20%;
-			left: 35%;
-			height: 207px;
-			-webkit-animation-duration: 1.8s;
-		}
-		.page2 .text-right{
-			position: absolute;
-			top: 16%;
-			right: 35%;
-			height: 381px;
-			-webkit-animation-duration: 1.8s;
-		}
+		
 	</style>
 	<script>
 		$(function(){
@@ -91,7 +92,7 @@
 			setTimeout(function(){
 				$('.page2 .text-left').removeClass('hide').addClass('animated slideInDown');
 				$('.page2 .text-right').removeClass('hide').addClass('animated slideInUp');
-			},1000);
+			},300);
 
 			setTimeout(function(){
 				$('.page2 .text-left').removeClass('hide').addClass('animated slideOutDown');

@@ -17,10 +17,14 @@ http://scrollrevealjs.org/ 动画效果
 
 页面切换：
 
-
+	
 动画：
 
 transition keyframes canvas
+
+transform translate 
+
+
 
 transform
 jquery easing
