@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p1</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="./dist/jquery/jquery-1.11.2.js"></script>
+    <script src="./dist/knockout/knockout-3.3.0.js"></script>
+  </head>
+  <body class="relative ofys">
+
+    <div class="row h50 mb30 ol">
+    </div>
+    <div class="row">  
+      <div class="col pct3"></div>
+
+      <div class="col pct20 box-sd" data-bind="foreach: docList">
+        <div class="p10 hover-red pointer gray1-text" data-bind="text: $data.docTitle, click: $parent.loadDoc"></div>
+      </div>
+
+      <div class="col pct3"></div>
+
+      <div class="col pct50 box-sd">
+        <div class="doc-content minh400 oh p5 no-ol" contenteditable="true"></div>
+      </div>
+
+      <div class="col pct3"></div>
+
+      <div class="col pct15">
+        <div class="doc-id p5">id</div>
+        <div class="hide doc-rev"></div>
+        <div class="doc-title box-sd m5 p5" contenteditable="true">title</div>
+        <div class="doc-tag box-sd m5 p5">
+          <span class="tag">abc</span>
+          <span class="tag">UED</span>
+        </div>
+        <div class="doc-comment box-sd m5 p5" contenteditable="true">comment</div>
+        <div>
+          <span class="btn m5" data-bind="click: save">Save</span>
+          <span class="btn m5" data-bind="click: del">Delete</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function qryDocById(docId, fn){
+        $.post('/doc/getDoc/' + docId
+          ,function(data){
+            fn(data.doc);
+          });
+      };
+
+      function showDoc(doc){
+        $('.doc-id').text(doc._id || '');
+        $('.doc-rev').text(doc._rev || '');
+        $('.doc-title').html(doc.titleText || '');
+        $('.doc-content').html(doc.content || '');
+      }
+
+      var vm = {
+        docList: ko.observableArray([]),
+        details: ko.observable(),
+
+        loadDoc: function(item){
+          qryDocById(item.docId, function(doc){
+            showDoc(doc);
+          });
+        },
+
+        save: function(){
+          var self = this;
+          $.post('/doc/save', {
+            titleText: $('.doc-title').text(),
+            titleHtml: $('.doc-title').html(),
+            content: $('.doc-content').html()
+          }, function(data){
+            self.refresh();
+          });
+        },
+
+        del: function(){
+          var self = this;
+          var docId = $('.doc-id').text();
+          var docRev = $('.doc-rev').text();
+          if(!docId || !docRev){
+            return;
+          }
+          $.post('/doc/delete', {
+            docId: docId,
+            docRev: docRev
+          }, function(data) {
+            //data = JSON.stringify(data);
+            if(data.ok) {
+              self.refresh();
+              showDoc({});
+            }else{
+              alert('failed');
+            }            
+          });          
+        },
+
+        refresh: function(){
+          var self = this;
+          $.post('/doc/getAll',{}, function(data){
+            //alert(data);
+            data = JSON.parse(data);
+            self.docList.removeAll();
+            for(var i=0; i<data.total_rows; i++){
+              self.docList.push({
+                docId: data.rows[i].value._id,
+                docTitle: data.rows[i].value.titleText
+              });
+              //self.docList.push(data.rows[i].value._id);
+            }
+          });
+        }
+      };
+
+      ko.applyBindings(vm);
+      vm.refresh();
+    </script>
+  </body>
+</html>

@@ -182,6 +182,8 @@ td,
 th {
   padding: 0;
 }
+
+/*! box-sizing: border-box */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -194,5 +196,161 @@ th {
   box-sizing: border-box;
 }
 
-
 /*! grid ~ */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.row:after {
+  clear: both;
+}
+.row .col {
+  float: left;
+  position: relative;
+  min-height: 10px;
+}
+.pct-10{
+  width: 10%;
+}
+.pct-15{
+  width: 15%;
+}
+.pct-20{
+  width: 20%;
+}
+.pct-25{
+  width: 25%;
+}
+.pct-30{
+  width: 30%;
+}
+.pct-35{
+  width: 35%;
+}
+.pct-40{
+  width: 40%;
+}
+.pct-50{
+  width: 50%;
+}
+.pct-60{
+  width: 60%;
+}
+.pct-70{
+  width: 70%;
+}
+
+/*! */
+.vh{
+  overflow: hidden;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-text{
+  text-align: center;
+}
+.ot {
+  outline: 1px solid #ccc;
+}
+.red-ot{
+  outline: 1px solid red;
+}
+.blue-ot{
+  outline: 1px solid blue;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.mg-t-5{
+  margin-top: 5px;
+}
+.mg-b-5{
+  margin-bottom: 5px;
+}
+.mg-l-5{
+  margin-left: 5px;
+}
+.mg-r-5{
+  margin-right: 5px;
+}
+.pd-t-5{
+  padding-top: 5px;
+}
+.pd-b-5{
+  padding-bottom: 5px;
+}
+.pd-l-5{
+  padding-left: 5px;
+}
+.pd-r-5{
+  padding-right: 5px;
+}
+.t-5{
+  top: 5px;
+}
+.b-5{
+  bottom: 5px;
+}
+.l-5{
+  left: 5px;
+}
+.r-5{
+  right: 5px;
+}
+.min-h-50{
+  min-height: 50px;
+}
+.min-h-400{
+  min-height: 400px;
+}
+.h50{
+  height: 50px;
+}
+.h400{
+  height: 400px;
+}
+.box-sd{
+  box-shadow: 0px 0px 5px #CCC;
+  border: 1px solid #D4D4D4;
+}
+.text-sd{
+  text-shadow: 0px 0px 1px #CCC;
+}
+
+.btn{
+  text-decoration: none;
+  color: #FFF;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
