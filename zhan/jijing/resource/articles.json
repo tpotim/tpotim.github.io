@@ -1,0 +1,47 @@
+{
+  "ok":      true,
+  "errMsg":  "",               
+  "hasMore": true ,     
+  "content": [                 
+    {
+      "mainTitle": "2015年1-4月小站雅思口语",        
+      "imgUrl": "images/weijijing_avatar.png",           
+      "subArticles": [         
+        {
+          "id": 1,             
+          "title": "词汇详解"          
+        },
+        {
+          "id": 2,
+          "title": "雅思口语高频题库100%命中率"
+        },
+        {
+          "id": 3,
+          "title": "听力词汇详解"
+        }
+      ]
+    },
+    {
+      "mainTitle": "2015年1-4月小站雅思口语",        
+      "imgUrl": "images/weijijing_avatar.png",           
+      "subArticles": [         
+        {
+          "id": 1,             
+          "title": "词汇详解"          
+        },
+        {
+          "id": 2,
+          "title": "雅思口语高频题库100%命中率"
+        },
+        {
+          "id": 3,
+          "title": "听力词汇详解"
+        },
+        {
+          "id": 4,
+          "title": "听力词高频题库100汇详解"
+        }
+      ]
+    }
+  ]
+}

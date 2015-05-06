@@ -1,0 +1,22 @@
+{
+     "ok"     : true,
+     "errMsg" : "",
+     "article": {
+       "title" :  "2015年4月小站教育雅思考试B类机经",
+       "author":  "wenyanzhang2",
+       "time"  :  "2015-4-12  10：58 ",
+       "content": "<p>对于托福听力来说，最难的一步莫过于句的听写部门的过程。</p><p>其实我们到最后就会慢慢的发现，对于听写最难的部分，并单词量达到一定程度的时候，对于听力的细节点的成功率则成为了我们提升的关键。 </p>",
+       "relatedArticles": [
+         {
+          "id"    : 123,
+          "title" : "雅思听力词汇详解1",
+          "imgUrl": "images/article_img.png"
+         },
+         {
+          "id"    : 234,
+          "title" : "重点与难2点",
+          "imgUrl": "images/article_img.png"
+         }
+       ]
+     }
+   }

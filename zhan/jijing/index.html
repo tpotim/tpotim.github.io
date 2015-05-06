@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>雅思口语机经</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper"> 
+
+  <div class="nav">
+    <dl>
+      <dt>
+        <a href="javascript:void(0)" data-bind="click: getTag.bind($data,'people'), css: { current: people }"> 
+          <img src="images/weijijing_user.png"> 
+          <span>人物</span>
+        </a> 
+      </dt>
+      <dt>
+        <a href="javascript:void(0)" data-bind="click: getTag.bind($data,'thing'), css: { current: thing }"> 
+          <img src="images/weijijing_thing.png"> 
+          <span>事物</span> 
+        </a> 
+      </dt>
+      <dt>
+        <a href="javascript:void(0)" data-bind="click: getTag.bind($data,'place'), css: { current: place }"> 
+          <img src="images/weijijing_address.png"> 
+          <span>地点</span> 
+        </a> 
+      </dt>
+      <dt>
+        <a href="javascript:void(0)" data-bind="click: getTag.bind($data,'eventValue'), css: { current: eventValue }"> 
+          <img src="images/weijijing_things.png"> 
+          <span>事件</span>
+        </a> 
+      </dt>
+    </dl>
+  </div>
+  <div class="main">
+
+    <!-- 文章列表 -->
+    <div class="content-list" data-bind="foreach: content">
+      <dl>
+        <dt><img data-bind="attr:{src: imgUrl}"></dt>
+        <dd>
+          <div class="icon"><img src="images/weijijing_icon.png" width="13" height="17"></div>
+          <div class="title">
+            <div data-bind="text: mainTitle"></div>
+          </div>
+        </dd>
+      </dl>
+      <ul>
+        <li></li>
+        <div class="list" data-bind="foreach: subArticles"> 
+          <a data-bind="text: title, click: $root.goToArticle"></a> 
+        </div>
+      </ul>
+    </div> 
+
+    <div class="loading">
+      <img class="loading-img" src="images/loading.gif">
+    </div>
+
+    <div class="more">
+      <img class="more-img" data-bind="click: getMore, visible: hasMore" src="images/weijijing_avatar_fangxiang.png">
+      <!-- <div class="no-more-text">没有更多机经了</div> -->
+    </div>
+
+  </div>
+</div>
+<script src="dist/jquery/jquery-1.11.2.min.js"></script>
+<script src="dist/knockout/knockout-3.3.0.js"></script>
+<script src="js/functions/urlService.js"></script>
+<script src="js/functions/articleService.js"></script>
+<script src="js/viewModel/indexViewModel.js"></script>
+</body>
+</html>
