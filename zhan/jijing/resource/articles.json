@@ -8,7 +8,8 @@
       "imgUrl": "images/weijijing_avatar.png",           
       "subArticles": [         
         {
-          "id": 1,             
+          "id": 1,
+          "parentId": 124,             
           "title": "词汇详解"          
         },
         {

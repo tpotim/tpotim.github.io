@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>雅思口语机经</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+  .main{
+    padding-top: 20px;
+  }
+  
+  .wheel-button{
+    position: fixed;
+    z-index: 5;
+    bottom: 68px;
+    right: 68px;
+  }
+
+  .wheel-button.active .line-mid1{
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg); IE 9
+    -webkit-transform: rotate(135deg); Safari and Chrome
+  }
+  .wheel-button.active .line-mid2{
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg); IE 9
+    -webkit-transform: rotate(45deg); Safari and Chrome
+  }
+
+  .wheel-button.active .line-top, .wheel-button.active .line-bottom{
+    display: none;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg); IE 9
+    -webkit-transform: rotate(135deg); Safari and Chrome
+  }
+
+  .wheel-button.active .bg-layer, .wheel-button.active .bg-layer2{
+    display: block;
+  }
+
+  .menu {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .menu .btn.trigger {
+    opacity: 0.25;
+    z-index: 100;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+  .menu .btn.trigger .line {
+    width: 60%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.3s, height 0.3s, top 0.3s;
+    transition: background-color 0.3s, height 0.3s, top 0.3s;
+
+    position: absolute;
+    top: 50%;
+    left: 20%;
+  }
+
+  .menu .btn.trigger .line-top{
+    top: 28%;
+  }
+  .menu .btn.trigger .line-mid1, .menu .btn.trigger .line-mid2{ 
+    top: 48%;
+  }
+  .menu .btn.trigger .line-bottom{
+    top: 68%;
+  }
+
+  .wheel {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 350px; /* this will determine the diameter of the circle  */
+    height: 350px; /* this will determine the diameter of the circle  */
+    visibility: hidden;
+    position: relative;
+    display: none;
+  }
+
+  .wheel li {
+    overflow: hidden;
+    float:left;
+  }
+  .wheel li a {
+    display: block;
+  }
+  .wheel .item {
+    /* width: 34px; */
+    text-align: center;
+  }
+
+
+  .wheel .item .text-icon{
+    display: block;
+    margin-bottom: 5px;
+    color: #5F60A6;
+    font-size: 34px;
+    /* line-height: 34px; */
+  }
+  .wheel .item .label{
+    color: #1C5B4F;
+  }
+
+  .bg-layer-full{
+    display: none;
+    position: fixed;
+    z-index: 4;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.5;
+  }
+
+  .bg-layer-part{
+    display: none;
+    position: fixed;
+    z-index: 4;
+    right: -250px;
+    bottom: -250px;
+    background-color: #F4ECEC;
+    opacity: 0.7;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+  }
+  .blur {    
+      -webkit-filter: blur(10px); /* Chrome, Opera */
+         -moz-filter: blur(10px);
+          -ms-filter: blur(10px);    
+              filter: blur(10px);    
+  }
+</style>
+
+</head>
+<body>
+  <div class="wrapper"> 
+    <div class="main">
+      <!-- 文章列表 -->
+      <div class="content-list hide" data-bind="foreach: content, css: {hide: content().length == 0}">
+        <dl>
+          <dt><img data-bind="attr:{src: imgUrl}"></dt>
+          <dd>
+            <div class="icon"><img src="images/weijijing_icon.png" width="13" height="17"></div>
+            <div class="title">
+              <div data-bind="text: mainTitle"></div>
+            </div>
+          </dd>
+        </dl>
+        <ul>
+          <li></li>
+          <div class="list" data-bind="foreach: subArticles"> 
+            <a data-bind="html: title, click: $root.goToArticle"></a> 
+          </div>
+        </ul>
+      </div> 
+
+      <div class="more hide-more" data-bind="css: {'hide-more': !hasMore()}">
+        <img class="more-img" data-bind="click: getMore" src="images/weijijing_avatar_fangxiang.png">
+      </div>
+    </div>
+
+    <div class="loading hide">  
+      <img class="loading-img" src="images/loading.gif">
+    </div>    
+  </div>
+
+  <div class="wheel-wrap">
+    <a href="#wheel3" class="wheel-button">
+      <div class="menu">
+        <div class="btn trigger">
+          <span class="line line-top"></span>
+          <span class="line line-mid1"></span>
+          <span class="line line-mid2"></span>
+          <span class="line line-bottom"></span>
+        </div>
+      </div>      
+    </a>
+    <ul id="wheel3" data-angle="NW" class="wheel">
+      <li class="item" data-bind="click: getTag.bind($data,'people','人物类')">
+        <span class="text-icon"><i class="fa fa-male"></i></span>
+        <span class="label">人物</span>        
+      </li>
+      <li class="item " data-bind="click: getTag.bind($data,'thing','事物类')">
+        <span class="text-icon"><i class="fa fa-list-alt"></i></span>
+        <span class="label">事物</span>
+      </li>
+      <li class="item " data-bind="click: getTag.bind($data,'place','地点类')">
+        <span class="text-icon"><i class="fa fa-map-marker"></i></span>
+        <span class="label">地点</span>      
+      </li>
+      <li class="item " data-bind="click: getTag.bind($data,'eventValue','事件类')">
+        <span class="text-icon"><i class="fa fa-file-text-o"></i></span>
+        <span class="label">事件</span>      
+      </li>
+    </ul>
+  </div>
+  <div class="bg-layer bg-layer-full"></div>
+  <div class="bg-layer bg-layer-part"></div>
+
+  <script src="dist/jquery/jquery-1.11.2.min.js"></script>
+  <script src="dist/knockout/knockout-3.3.0.js"></script>
+  <script src="js/service/urlService.js"></script>
+  <script src="js/service/articleService.js"></script>
+  <script src="js/viewModel/indexViewModel.js"></script>
+  <script src="dist/wheelmenu/jquery.wheelmenu.js"></script>
+  <script>
+
+    $(".wheel-button").wheelmenu({
+      trigger: "click",
+      animation: "fly",
+      animationSpeed: "fast",
+      beforeShow: function(){
+        $('.bg-layer').show();
+      },
+      afterHide: function(){
+        $('.bg-layer').hide();
+      }
+    });
+
+    $('.bg-layer').click(function(){
+      $(".wheel-button").click();
+    })
+  </script>
+</body>
+</html>

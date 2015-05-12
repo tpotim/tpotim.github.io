@@ -1,8 +1,8 @@
 var urlService = new function(){
-    var _HOST = "resource";
+    var _HOST = "http://supesite.tpooo.net";
     var _config = {
-        articles: _HOST + '/articles.json',
-        article: _HOST + '/articleDetail.json'
+        articles: _HOST + '/ajax.php',
+        article: _HOST + '/ajax.php'
     };
 
     // 获取服务url
@@ -10,7 +10,7 @@ var urlService = new function(){
         return _config[svc];
     };
 
-    // 获取url中的参数值
+    // 获取url参数值
     this.getParamVal = function( name, url ) {
         if (!url) url = decodeURI(location.href);
         name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");

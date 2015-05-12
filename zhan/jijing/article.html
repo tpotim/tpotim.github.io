@@ -10,18 +10,22 @@
 <body>
 <div class="wrapper">
 
+  <div class="loading hide" data-bind="css: {hide: dataReceived}">  
+    <img class="loading-img" src="images/loading.gif">
+  </div>
+
   <!-- 标题 -->
   <div class="article-title"> 
     <em data-bind="text: title"></em> 
-    <span data-bind="text: author"></span>
+    <span class="author" data-bind="text: author"></span>
     <span data-bind="text: time"></span>
   </div>
   
   <!-- 内容 -->
   <div class="article-content" data-bind="html: content"></div>  
   
-  <div class="related">
-    <P>相关机经</P>
+  <div class="related hide">
+    <p>相关机经</p>
     <ul data-bind="foreach: relatedArticles">
       <li data-bind="click: $root.goToArticle">
       	<a><img data-bind="attr: {src: imgUrl}"></a>
@@ -33,10 +37,10 @@
   </div>
 </div>
 
-<script src="dist/jquery/jquery-1.11.2.min.js"></script>
+<script src="dist/zepto/zepto.min.js"></script>
 <script src="dist/knockout/knockout-3.3.0.js"></script>
-<script src="js/functions/urlService.js"></script>
-<script src="js/functions/articleService.js"></script>
+<script src="js/service/urlService.js"></script>
+<script src="js/service/articleService.js"></script>
 <script src="js/viewModel/articleViewModel.js"></script>
 </body>
 </html>

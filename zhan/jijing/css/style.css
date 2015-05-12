@@ -202,7 +202,8 @@ ul,li{ list-style:none;}
 a{ text-decoration:none;}
 
 /*! custom style */
-.wrapper{ max-width:640px; height:auto; margin:0 auto; width:100%;font-size:18px;}
+.hide{display: none}
+.wrapper{ max-width:640px; height:auto; margin:0 auto; width:100%;font-size:14px;}
 /*nav*/
 .nav{ position:fixed; width:100%; max-width:640px; background:#fff; z-index:100;}
 .nav dl{ display:block; padding:20px 20px 0px 20px; margin-bottom:10px; border-bottom:#ccc 1px solid; /* Firefox */ display: -moz-box; -moz-box-orient: horizontal; /* Safari, Opera, and Chrome */ display: -webkit-box; -webkit-box-orient: horizontal; /* W3C */ display: box; box-orient: horizontal;}
@@ -217,7 +218,7 @@ a{ text-decoration:none;}
 .content-list dl,.content-list ul{ /* Firefox */ display: -moz-box; -moz-box-orient: horizontal; /* Safari, Opera, and Chrome */ display: -webkit-box; -webkit-box-orient: horizontal; /* W3C */ display: box; box-orient: horizontal;}
 .content-list ul{}
 .content-list dt{ width:60px;}
-.content-list dt img{ width:60px; height:60px; overflow:hidden; }
+.content-list dt img{ width:60px; height:60px; overflow:hidden; border-radius: 30px;}
 .content-list dd{position:relative; margin-left:24px;-moz-box-flex:1.0; -webkit-box-flex:1.0; box-flex:1.0; display:block;}
 .content-list dd .title{ background:#6dc1ea; height:60px;color:#fff; padding:8px 10px; line-height:25px; border-radius:5px;}
 .content-list dd .title {
@@ -258,6 +259,10 @@ a{ text-decoration:none;}
   width: 30px;
   height: 32px;
 }
+.hide-more{
+  visibility: hidden;
+  height: 40px;
+}
 /*result*/
 .result{ padding:0 20px 20px 20px;}
 .result dl{ font-size:16px; color:#969696;/* Firefox */ display: -moz-box; -moz-box-orient: horizontal; /* Safari, Opera, and Chrome */ display: -webkit-box; -webkit-box-orient: horizontal; /* W3C */ display: box; box-orient: horizontal;}
@@ -272,7 +277,7 @@ a{ text-decoration:none;}
 /*article-title*/
 .article-title{ padding:0 20px; color:#969696; font-size:14px;}
 .article-title em{ font-style:normal; display:block; padding:10px 0; color:#000;font-size:24px; line-height:160%;}
-.article-title span{ color:#6dc1ea; padding-right:20px;}
+.article-title span.author{ color:#6dc1ea; padding-right:20px;}
 .article-content{ padding:0px 20px; color:#5b5b5b;}
 .article-content p{ line-height:160%;}
 /*related*/
