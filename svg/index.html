@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p3</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="./dist/jquery/jquery-1.11.2.js"></script>
+    <script src="./dist/knockout/knockout-3.3.0.js"></script>
+  </head>
+  <body class="relative gray2-bg ofys ofxh">
+    <div class="relative pct80 center-block maxw1350 ofh">
+      <div class="row h100 pl40">
+        <span class="lh100 fs38 bold white-text">SVG</span>
+      </div>
+      <div class="row  pl25 pr40 gray3-bg">
+        <span class="ilb lh20 p15 white-text hover-c1 intro">Introduction</span>
+        <span class="ilb lh20 p15 white-text hover-c1 shape">Shape 形状</span>
+        <span class="ilb lh20 p15 white-text hover-c1 gradient">Gradient 渐变</span>
+        <span class="ilb lh20 p15 white-text hover-c1 filter">Filter 滤镜</span>
+        <span class="ilb lh20 p15 white-text hover-c1 element">Element 元素</span>
+        <!-- <span class="ilb lh20 p15 white-text hover-c1 bezier">Bezier curve</span> -->
+        <span class="ilb lh20 p15 white-text hover-c1 library">Library</span>
+        <span class="ilb lh20 p15 white-text hover-c1 related">Related</span>
+        <div class="ilb lh20 p15 white-text floatr pointer hide save">&#x2714;</div>
+        <div class="ilb lh20 p15 white-text floatr pointer edit">&#x270e;</div>
+      </div>
+      <div class="row pt70 pb40 pl40 graye-bg">
+        <div class="col pct100 box-wrap-main pr40">
+          <div class="box minh400" ></div>
+        </div>
+
+        <!-- <div class="col pct30 pr40"><div class="box minh400"></div></div> -->
+      </div>
+    </div>
+
+    <script>
+
+      $('.save').click(function(){
+        $(this).addClass('hide');
+        $('.edit').removeClass('hide');
+        $('.box').attr('contenteditable', false);
+      });
+      $('.edit').click(function(){
+        $(this).addClass('hide');
+        $('.save').removeClass('hide');
+        $('.box').attr('contenteditable', true);
+      });
+
+      function load(fileName){
+        $('.box-wrap-main').load('./html/' + fileName);
+      }
+
+      function chgBg(self){
+        $(self).parent().find('span').removeClass('color1-bg');
+        $(self).addClass('color1-bg');
+      }
+
+      $('.intro').click(function(){
+        chgBg(this);
+        load('intro.html');
+      });
+      $('.shape').click(function(){
+        chgBg(this);
+        load('shape.html');
+      });
+      $('.filter').click(function(){
+        chgBg(this);
+        load('filter.html');
+      });
+      $('.gradient').click(function(){
+        chgBg(this);
+        load('gradient.html');
+      });
+      $('.element').click(function(){
+        chgBg(this);
+        load('element.html');
+      });
+      $('.bezier').click(function(){
+        chgBg(this);
+        load('bezier.html');
+      });
+      $('.library').click(function(){
+        chgBg(this);
+        load('library.html');
+      });
+      $('.related').click(function(){
+        chgBg(this);
+        load('related.html');
+      });
+
+    </script>
+  </body>
+</html>
