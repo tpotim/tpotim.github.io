@@ -1,0 +1,128 @@
+SVG
+
+  SVG全称Scalable Vector Graphics(可缩放矢量图形)，是一种基于XML的图形格式，描述二维矢量图。
+  由W3C制定，是一个开放标准(http://www.w3.org/Graphics/SVG/)。
+
+    
+  相比其他图像格式，SVG 的优势：
+    SVG 文件是纯粹的 XML,可被非常多的工具读取和修改（比如记事本）。
+    SVG 是可伸缩的,可在任何的分辨率下被显示、打印。
+    SVG 图像中的文本是可选的，同时也是可搜索的（很适合制作地图）。
+    SVG图形格式支持多种滤镜和特殊效果，在不改变图像内容的前提下可以实现位图格式中类似文字阴影的效果
+    SVG图形格式可以用来动态生成图形，具有交互功能的地图，嵌入网页中，并显示给终端用户。
+
+    http://www.w3school.com.cn/svg/svg_intro.asp
+
+SVG文档
+  http://www.w3school.com.cn/svg/circle1.svg
+
+SVG与HTML
+  SVG 文件可通过以下标签嵌入 HTML 文档：<embed>、<object> 或者 <iframe>。
+    <embed src="circle1.svg" type="image/svg+xml" />
+    <object data="circle1.svg" type="image/svg+xml"></object>
+    <iframe src="circle1.svg"></iframe>
+  在 HTML5 中，能够将 SVG 元素直接嵌入 HTML 页面中。
+
+
+
+SVG形状
+  http://www.w3cschool.cc/svg/svg-rect.html
+
+SVG的定量思维
+  什么叫“SVG的定量思维”。SVG中的线（直线，曲线），面（矩形，圆）都没有相对尺寸这个概念，例如，宽度相对SVG画笔50%. 这是没有的，网页中我们可能会有这样的思维，成为相对思维，会让页面更有弹性。但是，SVG中，万万不可有这样的想法。
+  什么叫SVG，全称Scalable Vector Graphics, 也就是可缩放矢量图形的意思。也就是SVG本身可以被无限拉伸，那子元素所谓的相对尺寸就没有意义了。相对尺寸的意义在于里面的元素可以随着父级的尺寸变化而变化。而SVG本身尺寸的改变会带动里面的元素一起放大或缩小。因此，相对宽度是没有必要的。
+  SVG自身是需要定死一个尺寸的。例如，800x600. 此时，我们需要一个宽度为50%的线，我们直接宽度400像素就可以了。
+  在网页传统div布局中，如果子元素宽度是400像素，父容器宽度变化时候，其宽度依然400像素。因此，我们会经常使用50%这样的相对尺寸。但，SVG，父容器尺寸变化，子元素一起跟着变，因此，定值即可。这就是SVG的定量思维。
+
+
+
+SVG坐标系统与坐标转换  
+
+SVG贝塞尔曲线指令概要
+  http://www.zhangxinxu.com/wordpress/2014/06/deep-understand-svg-path-bezier-curves-command/
+
+
+SVG 在线编辑器
+  http://svg-edit.googlecode.com/svn/branches/2.6/editor/svg-editor.html
+
+Cubic-bezier在线编辑器
+  http://cubic-bezier.com/#.73,.25,.46,.99
+
+
+
+SVG主要支持以下几种显示对象：
+
+  1. 矢量显示对象，基本矢量显示对象包括矩形、圆、椭圆、多边形、直线、任意曲线等
+  2. 嵌入式外部图像，包括PNG、JPEG、SVG等
+  3. 文字对象
+
+  SVG和HTML,JS
+
+
+Library
+
+  Snap.svg, 
+
+  D3.js
+    http://d3js.org/
+    http://bl.ocks.org/mbostock/1062544
+
+Misc:
+
+  SVG, Canvas, CSS3 Animations
+
+  HTML 5 Canvas vs. SVG
+
+  使用 SVG 代替 Web Icon Font 
+    http://io-meter.com/2014/07/20/replace-icon-fonts-with-svg/
+
+  浏览器兼容性问题：
+    http://caniuse.com/#feat=svg
+    手机H5页面
+
+  
+
+Links:
+  深度掌握SVG路径path的贝塞尔曲线指令
+    http://www.zhangxinxu.com/wordpress/2014/06/deep-understand-svg-path-bezier-curves-command/
+
+  demo-Snap.svg
+    https://github.com/zhangxinxu/demo-Snap.svg
+
+  Paper.path([pathString])
+    http://www.zhangxinxu.com/GitHub/demo-Snap.svg/demo/basic/Paper.path.php
+
+  8.3 Path data
+    http://www.w3.org/TR/SVG/paths.html#PathData
+
+  Paths
+    https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+
+  贝塞尔曲线与CSS3动画、SVG和canvas的基情
+    http://www.zhangxinxu.com/wordpress/2013/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF-cubic-bezier-css3%E5%8A%A8%E7%94%BB-svg-canvas/
+
+  http://browser.qq.com/mac/
+
+  http://cubic-bezier.com/#.33,.73,.74,.3
+
+  Snap.svg.js实现的钓鱼知识分享及周边
+  http://www.zhangxinxu.com/wordpress/2014/02/snap-svg-fishing-css3/
+
+  HTML5 内联 SVG
+  http://www.w3school.com.cn/html5/html_5_svg.asp
+
+  SVG特征、支持以及一些实际使用问题
+  http://www.zhangxinxu.com/wordpress/2012/08/svg-feature-support-bugs/
+
+
+  http://zh.wikipedia.org/wiki/%E5%8F%AF%E7%B8%AE%E6%94%BE%E5%90%91%E9%87%8F%E5%9C%96%E5%BD%A2
+
+  http://www.w3schools.com/svg/
+
+  一些SVG向下兼容优雅降级技术
+  http://www.zhangxinxu.com/wordpress/2013/09/svg-fallbacks/
+
+  SVG+JS path等值变化实现CSS3兴叹的图形动画
+  http://www.zhangxinxu.com/wordpress/2014/06/svg-path-d-polyline-points-bezier-curves/
+
+  http://svg-edit.googlecode.com/svn/branches/2.6/editor/svg-editor.html
