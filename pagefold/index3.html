@@ -7,17 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style_common.css" />
-        <link rel="stylesheet" type="text/css" href="css/style1_1.css" />
-    <script type="text/javascript" src="js/modernizr.custom.69142.js"></script> 
     </head>
     <body>
         <div class="container">
-      <header>      
-        <h1><span>3D Thumbnail</span> Hover Effects</h1>
+      <header class="paper">      
+        <h1 ><span>3D Thumbnail</span> Hover Effects</h1>
         <h2>Adding some perspective with CSS3 and jQuery &mdash; <strong>best viewed in WebKit browsers</strong></h2>
         
-        <nav class="codrops-demos">
+        <nav class="codrops-demos ">
           <a class="current-demo" href="index.html">Demo 1</a>
           <a href="index2.html">Demo 2</a>
           <a href="index3.html">Demo 3</a>
@@ -44,7 +41,7 @@
           </div>
           <img src="images/1.jpg" />
         </div>
-        <div class="view">
+        <div class="view paper">
           <div class="view-back">
             <span data-icon="A">210</span>
             <span data-icon="B">102</span>
@@ -71,31 +68,33 @@
         </div>
       </div>
         </div>
-  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript"> 
-      
-      Modernizr.load({
-        test: Modernizr.csstransforms3d && Modernizr.csstransitions,
-        yep : ['js/jquery.hoverfold.js'],
-        nope: 'css/fallback.css',
-        callback : function( url, result, key ) {
-            
-          if( url === 'js/jquery.hoverfold.js' ) {
-        $( '#grid' ).hoverfold();
-          }
+  
+    </body>
 
-        }
-      });
-        
-    </script>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="oridomi.min.js"></script>
     <script>
-      $('.view').click(function(){
-        if($(this).hasClass('active')){
-          $(this).removeClass('active');
+      var folded = new OriDomi('.paper', {
+         touchEnabled: false,
+        vPanels:         5,     // number of panels when folding left or right (vertically oriented)
+        hPanels:         3,     // number of panels when folding top or bottom
+        speed:           0,  // folding duration in ms
+        ripple:          0,     // backwards ripple effect when animating
+        shadingIntesity: .5,    // lessen the shading effect
+        perspective:     800,   // smaller values exaggerate 3D distortion
+        maxAngle:        40,    // keep the user's folds within a range of -40 to 40 degrees
+        shading:         'soft' // change the shading type
+      });
+
+      $('.paper').click(function(){
+        
+        if($(this).hasClass('in-fold')){
+            folded.accordion(0).setSpeed(0);
+            $(this).removeClass('in-fold');
         }else{
-          $(this).addClass('active');
-        }        
+            folded.accordion(40).setSpeed(0);
+            $(this).addClass('in-fold');
+        }
       })
     </script>
-    </body>
 </html>

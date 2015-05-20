@@ -2,13 +2,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>page fold</title>
+        <title>page fold 2</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link href="demo/demo.css" rel="stylesheet" type="text/css">
+        
         <style>
-
+          body{
+            border: 0;
+          }
           .paper {
             width: 100%;
             height: 200px;
@@ -34,17 +36,30 @@
      
       
     </body>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script src="oridomi.min.js"></script>
     <script>
       var folded = new OriDomi('.paper', {
-        vPanels:         5,     // number of panels when folding left or right (vertically oriented)
+         touchEnabled: false,
+        vPanels:         3,     // number of panels when folding left or right (vertically oriented)
         hPanels:         3,     // number of panels when folding top or bottom
-        speed:           1200,  // folding duration in ms
-        ripple:          2,     // backwards ripple effect when animating
+        speed:           0,  // folding duration in ms
+        ripple:          0,     // backwards ripple effect when animating
         shadingIntesity: .5,    // lessen the shading effect
         perspective:     800,   // smaller values exaggerate 3D distortion
         maxAngle:        40,    // keep the user's folds within a range of -40 to 40 degrees
         shading:         'soft' // change the shading type
       });
+
+      $('.paper').click(function(){
+        
+        if($(this).hasClass('in-fold')){
+            folded.accordion(0).setSpeed(0);
+            $(this).removeClass('in-fold');
+        }else{
+            folded.accordion(40).setSpeed(0);
+            $(this).addClass('in-fold');
+        }
+      })
     </script>
 </html>
