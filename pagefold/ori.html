@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>page fold</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="demo/demo.css" rel="stylesheet" type="text/css">
+        <style>
+
+          .paper {
+            width: 100%;
+            height: 200px;
+            background-color: #ccc;
+            text-align: center;
+          }
+          .p2 {
+            position: fixed;
+            z-index: -1;
+            width: 150px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #666;
+          }
+        </style>
+    </head>
+
+    <body>
+     
+        <div class="p2">aaaaaaaaaaaaaa</div>
+        <div class="paper">oridomi~</div>
+     
+      
+    </body>
+    <script src="oridomi.min.js"></script>
+    <script>
+      var folded = new OriDomi('.paper', {
+        vPanels:         5,     // number of panels when folding left or right (vertically oriented)
+        hPanels:         3,     // number of panels when folding top or bottom
+        speed:           1200,  // folding duration in ms
+        ripple:          2,     // backwards ripple effect when animating
+        shadingIntesity: .5,    // lessen the shading effect
+        perspective:     800,   // smaller values exaggerate 3D distortion
+        maxAngle:        40,    // keep the user's folds within a range of -40 to 40 degrees
+        shading:         'soft' // change the shading type
+      });
+    </script>
+</html>
