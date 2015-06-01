@@ -1245,6 +1245,7 @@ a.bg-primary:hover {
 }
 
 .content-wrap > .content > li:first-child h1 {
+    display: none;
     width: 230px;
     padding: 10px;
     line-height: 30px;
