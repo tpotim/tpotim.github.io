@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="Keywords" content="微头条,智能测验" />
+  <meta name="description" id="description" content="有没有幻想过自己是复仇者联盟里的哪个超级英雄呢？钢铁侠还是雷神？表告诉我妳是黑寡妇-_- 快来测测吧！(150万+人已测)" />
+  <meta property="og:type" content="web" />
+  <meta property="og:title" content="你是复仇者联盟中的哪个超级英雄？" />
+  <meta property="og:site_name" content="微头条"/>
+  <meta property="og:image" content="http://imgcdn.lerays.com/quiz/2015/05/14/1e0901c0d1ea893d1aa05215bbe91469.jpg?f=c" />
+  <meta property="og:description" content="有没有幻想过自己是复仇者联盟里的哪个超级英雄呢？钢铁侠还是雷神？表告诉我妳是黑寡妇-_- 快来测测吧！(150万+人已测)" />
+  <title>你是复仇者联盟中的哪个超级英雄？</title>
+  <meta content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1" name="viewport" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container" id="container"></div>
+  <div class="ending full-page hide" >
+    <div class="mesg">
+      分享到朋友圈！炫耀一下呗！
+      <div class="share icon-redo2"></div>
+    </div>
+  </div>
+  <div class="orientation full-page hide">
+    <div class="orientation-wrap">
+      <div class="loading icon-spinner"></div>
+      <div class="mesg">请使用竖屏浏览，体验绝佳！</div>
+    </div>
+  </div>
+
+  <script type="text/template" id="quiz-data" style="display:none;">
+    {
+        "cate_id": "1",
+        "title": "你是复仇者联盟中的哪个超级英雄？",
+        "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/1e0901c0d1ea893d1aa05215bbe91469.jpg?f=c",
+        "imgWidth": 411,
+        "imgHeight": 312,
+        "description": "有没有幻想过自己是复仇者联盟里的哪个超级英雄呢？钢铁侠还是雷神？表告诉我妳是黑寡妇-_- 快来测测吧！(150万+人已测)",
+        "share": {
+            "title": "我是<%={result}.title%>，<%={quiz}.title%>",
+            "description": "我是<%={result}.title%>，<%={quiz}.description%>"
+        },
+        "results": [
+            {
+                "id": 1,
+                "title": "雷神",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/27ef4614f57cadc5b57a95a0f9b9a2a7.jpg?f=c",
+                "imgWidth": 1024,
+                "imgHeight": 750,
+                "description": "你是雷神！你是高贵的，总是努力做正确的事情。更多测试关注微头条(wei-toutiao)"
+            },
+            {
+                "id": 2,
+                "title": "美国队长",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/9a78c6ca31a4a96164ff0fe52f41a2e3.jpeg?f=c",
+                "imgWidth": 1280,
+                "imgHeight": 720,
+                "description": "你是美国队长！你充满了正义感，总是为了真相、正义而战。更多测试关注微头条(wei-toutiao)"
+            },
+            {
+                "id": 3,
+                "title": "钢铁侠",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/a8ecc95092662947a69fcac5dcceb713.jpg?f=c",
+                "imgWidth": 1920,
+                "imgHeight": 1080,
+                "description": "你是钢铁侠！尽管你可能很傲慢，无法严肃对待事情，但是你也超级地聪明和风趣幽默哦！更多测试关注微头条(wei-toutiao)"
+            },
+            {
+                "id": 4,
+                "title": "黑寡妇",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/9debd50861ad04180b69583e30855a78.jpg?f=c",
+                "imgWidth": 5401,
+                "imgHeight": 3601,
+                "description": "你是黑寡妇！你是冷血的俄罗斯特务，尽管没有超能力，但是谁都知道你的厉害。更多测试关注微头条(wei-toutiao)"
+            },
+            {
+                "id": 5,
+                "title": "绿巨人",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/dfc973de831267809cff08ba31232625.jpg?f=c",
+                "imgWidth": 2189,
+                "imgHeight": 1860,
+                "description": "你是绿巨人浩克！你的内在人格是一个温和的天才，但是不要惹怒他，否则只有一个字：砸砸砸！更多测试关注微头条(wei-toutiao)"
+            },
+            {
+                "id": 6,
+                "title": "鹰眼",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/6e0dabea83ce636a6a75c3267a7b1327.jpg?f=c",
+                "imgWidth": 3200,
+                "imgHeight": 2000,
+                "description": "You are Hawkeye! You're the brooding super agent with a penchant for archery, and a certain Russian spy... 你是鹰眼！你是一个忧郁的超级特务，特殊喜好是箭术，和一个俄罗斯女特务...更多测试关注微头条(wei-toutiao)"
+            }
+        ],
+        "questions": [
+            {
+                "caption": "以下哪个词最能描述你？",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/51af03e215e96f8fc552258d98c049ea.jpg?f=c",
+                "imgWidth": 640,
+                "imgHeight": 479,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "聪明",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "凶猛",
+                        "results": {
+                            "1": "2",
+                            "2": "1",
+                            "3": "1",
+                            "4": "2",
+                            "5": "2",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "忧郁",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "正义",
+                        "results": {
+                            "1": "1",
+                            "2": "2",
+                            "3": "1",
+                            "4": "1",
+                            "5": "1",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "幽默",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "浪漫",
+                        "results": {
+                            "1": "2",
+                            "2": "0",
+                            "3": "1",
+                            "4": "2",
+                            "5": "0",
+                            "6": "2"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "你最不喜欢别人什么？",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/a45f5fe153fd3a2e5c60e68dd527c5c8.jpg?f=c",
+                "imgWidth": 640,
+                "imgHeight": 480,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "傲慢",
+                        "results": {
+                            "1": "1",
+                            "2": "2",
+                            "3": "0",
+                            "4": "1",
+                            "5": "1",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "自大",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "1",
+                            "5": "1",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "妄想统治世界",
+                        "results": {
+                            "1": "2",
+                            "2": "2",
+                            "3": "2",
+                            "4": "2",
+                            "5": "2",
+                            "6": "2"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "变身怪物",
+                        "results": {
+                            "1": "1",
+                            "2": "1",
+                            "3": "1",
+                            "4": "1",
+                            "5": "0",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "蠢",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "1",
+                            "5": "1",
+                            "6": "0"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "选一个乐队",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/9e17421484feb8511a63831328a7691e.gif?f=c",
+                "imgWidth": 500,
+                "imgHeight": 270,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "Led Zeppelin",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "Vera Lynn",
+                        "results": {
+                            "1": "1",
+                            "2": "2",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "The Smiths ",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "0",
+                            "5": "2",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "Pussy Riot ",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "2",
+                            "5": "0",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "Robyn",
+                        "results": {
+                            "1": "2",
+                            "2": "0",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "Bon Jovi ",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "2"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "你的理想假期是什么样的？",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/f960cbdba4ab2a31b5d4f6217e09ecdc.jpg?f=c",
+                "imgWidth": 639,
+                "imgHeight": 480,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "去一个温暖而和平的地方度假",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "1",
+                            "5": "2",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "要有很多的音乐和酒",
+                        "results": {
+                            "1": "1",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "到历史文化名城去",
+                        "results": {
+                            "1": "1",
+                            "2": "1",
+                            "3": "0",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "你读书时最喜欢的课程是？",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/97b2e8e2428c4b048eb08978c51eb092.jpg?f=c",
+                "imgWidth": 640,
+                "imgHeight": 480,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "历史",
+                        "results": {
+                            "1": "1",
+                            "2": "2",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "数学",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "物理",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "英语",
+                        "results": {
+                            "1": "0",
+                            "2": "1",
+                            "3": "1",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "体育",
+                        "results": {
+                            "1": "2",
+                            "2": "2",
+                            "3": "2",
+                            "4": "2",
+                            "5": "0",
+                            "6": "2"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "你的衣着风格是？",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/9144378172a0a3784a06ed7c9c174eac.jpg?f=c",
+                "imgWidth": 640,
+                "imgHeight": 480,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "休闲",
+                        "results": {
+                            "1": "0",
+                            "2": "1",
+                            "3": "1",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "运动风",
+                        "results": {
+                            "1": "0",
+                            "2": "1",
+                            "3": "0",
+                            "4": "2",
+                            "5": "0",
+                            "6": "2"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "实用型",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "1",
+                            "5": "0",
+                            "6": "2"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "奇装异服",
+                        "results": {
+                            "1": "2",
+                            "2": "2",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "1"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "暴露的",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "2",
+                            "5": "2",
+                            "6": "1"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "生活就要...",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/7a1bdec26fbc3cc15ab39044dac91383.jpg?f=c",
+                "imgWidth": 640,
+                "imgHeight": 480,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "有趣！",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "做正事儿",
+                        "results": {
+                            "1": "1",
+                            "2": "2",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "谈恋爱",
+                        "results": {
+                            "1": "2",
+                            "2": "1",
+                            "3": "1",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "为目标奋斗",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "家庭",
+                        "results": {
+                            "1": "2",
+                            "2": "0",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    }
+                ]
+            },
+            {
+                "caption": "如何面对愤怒？",
+                "img_src": "http://imgcdn.lerays.com/quiz/2015/05/14/c33e3a449d06ea420aa95384f4da8322.jpg?f=c",
+                "imgWidth": 640,
+                "imgHeight": 480,
+                "layout": {
+                    "cols": "1",
+                    "img": "left"
+                },
+                "answers": [
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "赶紧跑掉",
+                        "results": {
+                            "1": "0",
+                            "2": "0",
+                            "3": "0",
+                            "4": "0",
+                            "5": "0",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "马上开打",
+                        "results": {
+                            "1": "2",
+                            "2": "0",
+                            "3": "2",
+                            "4": "0",
+                            "5": "2",
+                            "6": "0"
+                        }
+                    },
+                    {
+                        "imgWidth": 0,
+                        "imgHeight": 0,
+                        "caption": "冷静考虑情况",
+                        "results": {
+                            "1": "0",
+                            "2": "2",
+                            "3": "0",
+                            "4": "2",
+                            "5": "0",
+                            "6": "1"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+  </script>
+  <script language="text/template" id="poster-tpl" style="display:none;"> <div class="content-wrap full-page" id="content-wrap" attr-full-page> <ul class="content" id="content" attr-content> <li attr-page attr-cover> <div class="img-cover" img-src="<%={img_src}%>" img-width="<%={imgWidth}%>" img-height="<%={imgHeight}%>" cover-img> <img class="hide"/> </div> <h1 class="hide" cover-title><%={title}%></h1> <div class="cover-wrapper" id="cover-wrapper" cover-wrapper> <ul class="desc cover-scroller hide" id="cover-scroller" cover-desc> <li><%={description}%></li> </ul> </div> <div class="btn-wrap"> <div class="btn bg-primary hide" id="start" cover-btn>开始测试</div> </div> <div class="power"><a class="text" href="http://app.lerays.com/app/dl?from=quiz.h5">powered&nbsp;by&nbsp;微头条</a></div> </li> <%for (var i = 0; i < {questions}.length; i++) {%> <li attr-page attr-main> <div class="img-cover hide" img-src="<%={questions[i]}.img_src%>" img-width="<%={questions[i]}.imgWidth%>" img-height="<%={questions[i]}.imgHeight%>" main-img/> <h1 class="hide" main-title><%=i+1%>.<%={questions[i].caption}%></h1> </div> <%var answers = {questions[i].answers},layout = {questions[i]}.layout%> <div class="wrapper <%=layout.cols == '1' ? '' : 'padding-lr-4'%> " answers-wrapper> <ul class="answers scroller hide" id="answers" answers-num=<%=answers.length%> main-answers> <%for (var j = 0; j < answers.length; j++) {%> <%if(layout.cols == 1){%> <%if (typeof answers[j].img_src == "undefiend" || answers[j].img_src != null) {%> <li class="hr" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="img-wrap <%=layout.img == 'left' ?'pl':'pr' %> " img-src="<%=answers[j].img_src%>" img-width="<%=answers[j].imgWidth%>" img-height="<%=answers[j].imgHeight%>"></div> <div class="text-wrap" answer-text><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%> </div> <div class="clear"></div> </li> <%}else {%> <li class="hr padding-tb" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></li> <%}%> <%}else {%> <%if((j+1)%parseInt(layout.cols) == 1){%> <li class="vr"> <%}%> <div class="col-sm-<%=12/layout.cols%> "> <%if (typeof answers[j].img_src == "undefiend" || answers[j].img_src != null || answers[j].img_src == "") {%> <div class="block-box" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="img-wrap" data-layout='<%=JSON.stringify(layout)%>' img-src="<%=answers[j].img_src%>" img-width="<%=answers[j].imgWidth%>" img-height="<%=answers[j].imgHeight%>"></div> <div class="text-wrap"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></div> </div> <%}else {%> <div class="block-box padding-tb" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="text-wrap"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></div> </div> <%}%> </div> <%if((j+1)%parseInt(layout.cols) == 0 || (j+1)==answers.length){%> <div class="clear"></div> </li> <%}%> <%}%> <%};%> </ul> </div> </li> <%};%> <li attr-page attr-result> <div class="result-img hide" result-img></div> <div class="title hide" result-title></div> <div class="result-wrapper" id="result-wrapper" result-wrapper> <ul class="desc result-scroller" id="result-scroller"> <li class="hide" result-desc></li> </ul> </div> <div class="btn-wrap hide" result-btn> <div class="btn bg-primary" id='restart'>更多小测试</div> <div class="btn bg-primary icon-picassa" id='share'>分享到朋友圈</div> </div> <div class="power"><a class="text" href="http://app.lerays.com/app/dl?from=quiz.h5">powered&nbsp;by&nbsp;微头条</a></div> </li> </ul> </div> </script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript"> 
+    var data_tpl = $('#quiz-data').html(); 
+    WeittQuiz.run(data_tpl,"#container","#poster-tpl",{ next_page_time: 700, bg_img: "", cover_desc: { duration: 900, animate: "zoomIn" } }); 
+  </script>
+  <div style="display:none"></div>
+</body>
+</html>
