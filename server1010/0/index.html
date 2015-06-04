@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="lyt.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="dist/jquery-1.11.3.min.js"></script>
+  <script src="dist/velocity.min.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  <div class="body-wrap relative bg-gray13">
+    <div class="absolute w50 mh700 bg-gray12 page-wrap">
+      <div class="page editable" page-id=""></div>
+    </div>
+    <div class="absolute w50 l50 mh700 bg-gray11">
+      
+    </div>
+
+    <div class="fixed r0 mt20 mr100">
+      <span class="pointer mr20" id="save">Save</span>
+      <input type="text">
+    </div>
+  </div>
+</body>
+<script>
+  $(function(){
+    //$('.body-wrap').velocity({right: "100%"}, 1500);
+
+    $('.editable').attr('contenteditable', true);
+        
+    $('#save').click(function(){
+      var server = 'http://localhost:1010/save';
+      $('.page').attr('contenteditable', false);
+      $.post(server, {
+        pageId: $('.page').attr('page-id'),
+        content: $('.page-wrap').html()
+      }).done(function(data){        
+        if(data.ok){
+          alert('ok');
+          $('.page').attr('page-id', data.pageId);
+        }else{
+          aler('error');
+        }
+      }).fail(function(){
+        alert('ajax fail');
+      }).always(function(){
+        $('.page').attr('contenteditable', true);
+      });
+    })
+  })
+</script>
+</html>
