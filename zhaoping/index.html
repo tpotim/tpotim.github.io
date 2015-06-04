@@ -667,12 +667,92 @@
         ]
     }
   </script>
-  <script language="text/template" id="poster-tpl" style="display:none;"> <div class="content-wrap full-page" id="content-wrap" attr-full-page> <ul class="content" id="content" attr-content> <li attr-page attr-cover> <div class="img-cover" img-src="<%={img_src}%>" img-width="<%={imgWidth}%>" img-height="<%={imgHeight}%>" cover-img> <img class="hide"/> </div> <h1 class="hide" cover-title><%={title}%></h1> <div class="cover-wrapper" id="cover-wrapper" cover-wrapper> <ul class="desc cover-scroller hide" id="cover-scroller" cover-desc> <li><%={description}%></li> </ul> </div> <div class="btn-wrap"> <div class="btn bg-primary hide" id="start" cover-btn>开始测试</div> </div></li> <%for (var i = 0; i < {questions}.length; i++) {%> <li attr-page attr-main> <div class="img-cover hide" img-src="<%={questions[i]}.img_src%>" img-width="<%={questions[i]}.imgWidth%>" img-height="<%={questions[i]}.imgHeight%>" main-img/> <h1 class="hide" main-title><%=i+1%>.<%={questions[i].caption}%></h1> </div> <%var answers = {questions[i].answers},layout = {questions[i]}.layout%> <div class="wrapper <%=layout.cols == '1' ? '' : 'padding-lr-4'%> " answers-wrapper> <ul class="answers scroller hide" id="answers" answers-num=<%=answers.length%> main-answers> <%for (var j = 0; j < answers.length; j++) {%> <%if(layout.cols == 1){%> <%if (typeof answers[j].img_src == "undefiend" || answers[j].img_src != null) {%> <li class="hr" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="img-wrap <%=layout.img == 'left' ?'pl':'pr' %> " img-src="<%=answers[j].img_src%>" img-width="<%=answers[j].imgWidth%>" img-height="<%=answers[j].imgHeight%>"></div> <div class="text-wrap" answer-text><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%> </div> <div class="clear"></div> </li> <%}else {%> <li class="hr padding-tb" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></li> <%}%> <%}else {%> <%if((j+1)%parseInt(layout.cols) == 1){%> <li class="vr"> <%}%> <div class="col-sm-<%=12/layout.cols%> "> <%if (typeof answers[j].img_src == "undefiend" || answers[j].img_src != null || answers[j].img_src == "") {%> <div class="block-box" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="img-wrap" data-layout='<%=JSON.stringify(layout)%>' img-src="<%=answers[j].img_src%>" img-width="<%=answers[j].imgWidth%>" img-height="<%=answers[j].imgHeight%>"></div> <div class="text-wrap"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></div> </div> <%}else {%> <div class="block-box padding-tb" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="text-wrap"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></div> </div> <%}%> </div> <%if((j+1)%parseInt(layout.cols) == 0 || (j+1)==answers.length){%> <div class="clear"></div> </li> <%}%> <%}%> <%};%> </ul> </div> </li> <%};%> <li attr-page attr-result> <div class="result-img hide" result-img></div> <div class="title hide" result-title></div> <div class="result-wrapper" id="result-wrapper" result-wrapper> <ul class="desc result-scroller" id="result-scroller"> <li class="hide" result-desc></li> </ul> </div> <div class="btn-wrap hide" result-btn> <div class="btn bg-primary" id='restart'>查看小站职位</div> <div class="btn bg-primary icon-picassa" id='share'>分享到朋友圈</div> </div></li> </ul> </div> </script>
+  <script language="text/template" id="poster-tpl" style="display:none;"> 
+    <div class="content-wrap full-page" id="content-wrap" attr-full-page> 
+        <ul class="content" id="content" attr-content> 
+            <li attr-page attr-cover> 
+            <div class="img-cover" img-src="<%={img_src}%>" img-width="<%={imgWidth}%>" img-height="<%={imgHeight}%>" cover-img> 
+                <img class="hide"/> 
+            </div> 
+            <h1 class="hide" cover-title><%={title}%></h1> 
+            <div class="cover-wrapper" id="cover-wrapper" cover-wrapper> 
+            <ul class="desc cover-scroller hide" id="cover-scroller" cover-desc> 
+            <li><%={description}%></li> 
+            </ul> 
+            </div> 
+            <div class="btn-wrap"> 
+                <div class="btn bg-primary hide" id="start" cover-btn>开始测试</div> 
+                <div class=" hide" id="gotoJob" cover-btn style="text-align:center;color:#157efd;margin-top:9px;letter-spacing: 2px;font-size:17px;text-decoration: underline;">查看小站职位</div> 
+            </div>
+            </li> <%for (var i = 0; i < {questions}.length; i++) {%> 
+                <li attr-page attr-main> <div class="img-cover hide" img-src="<%={questions[i]}.img_src%>" img-width="<%={questions[i]}.imgWidth%>" img-height="<%={questions[i]}.imgHeight%>" main-img/> 
+                <h1 class="hide" main-title><%=i+1%>.<%={questions[i].caption}%></h1> </div> 
+                <%var answers = {questions[i].answers},layout = {questions[i]}.layout%> 
+                <div class="wrapper <%=layout.cols == '1' ? '' : 'padding-lr-4'%> " answers-wrapper> 
+                <ul class="answers scroller hide" id="answers" answers-num=<%=answers.length%> main-answers> <%for (var j = 0; j < answers.length; j++) {%> <%if(layout.cols == 1){%> <%if (typeof answers[j].img_src == "undefiend" || answers[j].img_src != null) {%> <li class="hr" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="img-wrap <%=layout.img == 'left' ?'pl':'pr' %> " img-src="<%=answers[j].img_src%>" img-width="<%=answers[j].imgWidth%>" img-height="<%=answers[j].imgHeight%>"></div> 
+                <div class="text-wrap" answer-text><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%> </div> 
+                <div class="clear"></div> </li> <%}else {%> <li class="hr padding-tb" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></li> <%}%> <%}else {%> <%if((j+1)%parseInt(layout.cols) == 1){%> <li class="vr"> <%}%> <div class="col-sm-<%=12/layout.cols%> "> <%if (typeof answers[j].img_src == "undefiend" || answers[j].img_src != null || answers[j].img_src == "") {%> <div class="block-box" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> 
+                <div class="img-wrap" data-layout='<%=JSON.stringify(layout)%>' img-src="<%=answers[j].img_src%>" img-width="<%=answers[j].imgWidth%>" img-height="<%=answers[j].imgHeight%>"></div> 
+                <div class="text-wrap"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></div> </div> <%}else {%> 
+                    <div class="block-box padding-tb" data-results='<%=JSON.stringify(answers[j].results)%>' answer-item disable="0"> <div class="text-wrap"><%=String.fromCharCode(65+j)%>.<%=answers[j].caption%></div> </div> <%}%> </div> <%if((j+1)%parseInt(layout.cols) == 0 || (j+1)==answers.length){%> <div class="clear"></div> </li> <%}%> <%}%> <%};%> </ul> </div> </li> <%};%> <li attr-page attr-result> <div class="result-img hide" result-img></div> <div class="title hide" result-title></div> 
+                    <div class="result-wrapper" id="result-wrapper" result-wrapper> 
+                    <ul class="desc result-scroller" id="result-scroller"> 
+                    <li class="hide" result-desc></li> 
+                    </ul> </div>
+                    <div class="btn-wrap hide" result-btn>
+                     <div class="btn bg-primary" id='restart'>查看小站职位</div>
+                      <div class="btn bg-primary icon-picassa" id='share'>分享到朋友圈</div> 
+                      </div></li> </ul> </div> 
+                      </script>
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript"> 
     var data_tpl = $('#quiz-data').html(); 
     WeittQuiz.run(data_tpl,"#container","#poster-tpl",{ next_page_time: 700, bg_img: "", cover_desc: { duration: 900, animate: "zoomIn" } }); 
   </script>
-  <div style="display:none"></div>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
+  <script>
+    var host = 'http://fz1.tpooo.com';
+    var verifyUrl = host + '/kaowei/interface/main/verifyJSSDK';
+    $.post(verifyUrl, {url: encodeURIComponent(location.href)},function(data){
+        data = JSON.parse(data);
+        wx.config({
+          debug: false,
+          appId: data.appId, 
+          timestamp: data.timestamp, 
+          nonceStr: data.nonceStr,
+          signature: data.signature,
+          jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] 
+        });
+    });
+    wx.ready(function(){
+      // 分享到朋友圈
+      wx.onMenuShareTimeline({
+        title: '“小站联盟”诚邀各路英雄', 
+        link: location.href, 
+        imgUrl: host + '/kw/zhaoping/img/one.jpg', 
+        success: function () {},
+        cancel: function () {}
+      });
+      // 分享给朋友
+      wx.onMenuShareAppMessage({
+        title: '“小站联盟”诚邀各路英雄', 
+        desc: '加入小站团队，让队友来帮助你一起寻找自我！',
+        link: location.href, 
+        imgUrl: host + '/kw/zhaoping/img/one.jpg', 
+        success: function () {},
+        cancel: function () {}
+      });
+    });
+
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c61ce998896b14425c21b1ca4780e5ea";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </body>
 </html>

@@ -1029,7 +1029,7 @@ ul,li {
     animation-timing-function: ease-out
 }
 
-@font-face {
+/* @font-face {
     font-family: 'icomoon';
     src: url(/static/fonts/icomoon.eot?-ko04vy);
     src: url(/static/fonts/icomoon.eot?#iefix-ko04vy) format("embedded-opentype"),url(/static/fonts/icomoon.woff?-ko04vy) format("woff"),url(/static/fonts/icomoon.ttf?-ko04vy) format("truetype"),url(/static/fonts/icomoon.svg?-ko04vy#icomoon) format("svg");
@@ -1115,7 +1115,7 @@ ul,li {
 
 .icon-picassa:before {
     content: "\eaa4"
-}
+} */
 
 .btn {
     display: block;

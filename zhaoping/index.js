@@ -2449,6 +2449,9 @@ var JTE = function()
         $("#restart").bind(touch_name, function() {
             location.href = "job.html";
         });
+        $('#gotoJob').bind(touch_name, function() {
+            location.href = "job.html";
+        });
         $("#share").bind(touch_name, function() {
             $(".ending").removeClass("hide").addClass("show").addClass("animated").addClass("fadeIn");
             setTimeout(function() {
