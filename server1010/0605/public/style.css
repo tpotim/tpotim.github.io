@@ -1,0 +1,15 @@
+.page {
+	position: relative;
+	padding: 60px 40px 60px 40px;
+	overflow: hidden;
+	outline: none;
+	-moz-box-shadow: 1px 2px 12px #858585;
+	-webkit-box-shadow: 1px 2px 12px #858585;
+	box-shadow: 1px 2px 12px #858585;
+}
+/* color */
+.bg-fffae8 {background-color: #FFFAE8;}
+.bg-eee8d8 {background-color: #EEE8D8;}
+.bg-e8dfc4 {background-color: #E8DFC4;}
+.bg-ccc {background-color: #CCCCCC;}
+/* end of color */

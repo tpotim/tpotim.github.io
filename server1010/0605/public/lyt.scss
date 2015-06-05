@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/* sass --style compact --watch lyt.scss:lyt.css  */
+
+/* position */
+.relative {position: relative;}
+.absolute {position: absolute;}
+.fixed {position: fixed;}
+.floatl {float: left;}
+.floatr {float: right;}
+
+
+/* margin padding width */
+@for $i from 0 through 20 {
+  .m#{$i*5} {
+      margin: $i * 5px;
+  }
+  .mt#{$i*5} {
+    margin-top: $i * 5px;
+  }
+  .mb#{$i*5} {
+    margin-bottom: $i * 5px;
+  }
+  .ml#{$i*5} {
+    margin-left: $i * 5px;
+  }
+  .mr#{$i*5} {
+    margin-right: $i * 5px;
+  }
+  .p#{$i*5}{
+      padding: $i * 5px;
+  }
+  .pt#{$i*5} {
+    padding-top: $i * 5px;
+  }
+  .pb#{$i*5} {
+    padding-bottom: $i * 5px;
+  }
+  .pl#{$i*5} {
+    padding-left: $i * 5px;
+  }
+  .pr#{$i*5} {
+    padding-right: $i * 5px;
+  }
+  .plr#{$i*5} {
+    padding-left: $i * 5px;
+    padding-right: $i * 5px;
+  }
+  
+  .l-pct#{$i*5} {
+    left: percentage($i * 5 / 100);
+  }
+  .r-pct#{$i*5} {
+    right: percentage($i * 5 / 100);
+  }
+  .w-pct#{$i*5} {
+    width: percentage($i * 5 / 100);
+  }
+}
+
+.mh-pct40 {
+    min-height: 40%;
+}
+.h-pct100{
+    height: 100%;
+}
+
+/* border */
+@for $i from 0 through 5 {
+  .bd#{$i}{
+    border-width: $i * 1px;
+    border-color: #ccc;
+  }
+}
+
+
+@for $i from 0 through 15 {
+  .bg-gray#{$i}{
+    background-color: #111111 * $i;
+  }
+}
+
+.hide {display: none;}
+
+.center-block {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+}
+.center-text {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* color */
+$hopbush: #c69;
+$bouquet: #b37399;
+$venus: #998099;
+$patina: #699;
+$nebula: #d2e1dd;
+$white: #fff;
+$dawn-pink: #f2ece4;
+$wafer: #e1d7d2;
+$iron: #dadbdf;
+$regent-grey: #808c99;
+$pale-sky: #6b717f;
+$midnight-blue: #036;
+
+
+/* end of color */

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="h-pct100">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="base.css">
+		<link rel="stylesheet" href="lyt.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="dist/jquery-1.11.3.min.js"></script>
+		<script src="dist/velocity.min.js"></script>
+		<script src="index.js"></script>
+	</head>
+
+	<body class="h-pct100">
+		<div class="body-wrap relative h-pct100">
+			
+			<div class=" absolute w-pct50  pt50 plr20 h-pct100 bg-e8dfc4">				
+				
+			</div>
+			
+			<div class="page-wrap absolute l-pct50 pt80 plr20 w-pct50 h-pct100 bg-fffae8 ">
+				<div class="page editable mh-pct40 bg-fffae8" page-id=""></div>
+			</div>
+
+
+			<div class="fixed r-pct0 mt20 mr100">
+				<span class="pointer mr20" id="list">List</span>
+				<span class="pointer mr20" id="save">Save</span>
+				<input type="text">
+			</div>
+			
+			<div class="page-id-list absolute w-pct40 h-pct100 pt80 plr50 bg-ccc">
+				
+			</div>
+			
+		</div>
+		<div class="tpl hide">
+			<div class="page-item mb15 pointer">aaaa</div>
+		</div>
+	</body>
+
+	<script>
+		$(function() {
+			//$('.body-wrap').velocity({right: "100%"}, 1500);
+			$('.editable').attr('contenteditable', true);
+			$('#save').click(function() {
+				var server = 'http://localhost:1010/save';
+				$('.page').attr('contenteditable', false);
+				$.post(server, {
+					pageId: $('.page').attr('page-id'),
+					content: $('.page-wrap').html()
+				}).done(function(data) {
+					if (data.ok) {
+						alert('ok');
+						$('.page').attr('page-id', data.pageId);
+					} else {
+						alert('error');
+					}
+				}).fail(function() {
+					alert('ajax fail');
+				}).always(function() {
+					$('.page').attr('contenteditable', true);
+				});
+			});
+			
+			$('#list').click(function(){
+				
+				var arr = ['1433500176941', '123', 'dddd', '23232323'];
+				var $pageIdList = $('.page-id-list');
+				for(var i=0; i<arr.length; i++){
+					var $newItem = $('.tpl .page-item').clone(true).text(arr[i]);
+					$pageIdList.append($newItem);
+				}
+			});
+			
+			$('.page-item').click(function(){
+				var url = 'page/' + $(this).text() + '.html';
+				$.get(url, function(data){
+					$('.page-wrap').html(data);
+				});
+			})
+		})
+	</script>
+
+</html>
