@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <title>mysql</title>
+    <style>
+      .wrap {
+        margin: 0 auto;
+        width: 500px;
+      }
+      .wrap textarea {
+        margin: 20px 0;
+        width: 100%;
+        min-height: 300px;
+      }
+    </style>
+    <script src="dist/jquery-1.11.3.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <textarea id="sqlInput" ></textarea>
+      <button id="sqlSendBtn">execute sql</button>
+      <textarea id="sqlResult"></textarea>
+    </div>  
+  </body>
+
+  <script>
+    $(function(){
+      
+      $('#sqlSendBtn').click(function(){
+
+        $.post('/sql', {
+          sql: $('#sqlInput').val()
+
+        }).done(function(data){
+          $('#sqlResult').val(JSON.stringify(data));
+
+        }).fail(function(err){
+          $('#sqlResult').val(JSON.stringify(err));
+        });
+
+      });
+    });
+  </script>
+</html>
