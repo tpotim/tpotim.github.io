@@ -1,0 +1,10 @@
+/**
+ * reset.css
+ *
+ * The browser's default style set to unity
+ * @author jionn <zhaijianglin@126.com>
+ * @copyright Copyright (C) 2011-2014 www.1guo.net All rights reserved
+ * @link http://www.1guo.net
+ * @version 1.0
+ */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,th,td{margin:0;padding:0;}fieldset,img{border:0;}:focus{outline:0;}code,em,strong,th,optgroup{font-style:normal;font-weight:normal;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}code{font-size:100%;}input,button,textarea,select{*font-size:100%;}body{line-height:1.5;font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;font-size:14px;color:#333;}ol,ul{list-style:none;}table{border-collapse:collapse;border-spacing:0;}caption,th{text-align:left;}:link,:visited{text-decoration:none;}
