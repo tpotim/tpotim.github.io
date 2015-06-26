@@ -6,6 +6,8 @@ body{
 	margin: 0px; 
 	padding: 0px;
 	list-style: none;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
 }
 .wrapper{
 	width: 100%;
