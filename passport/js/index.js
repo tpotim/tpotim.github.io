@@ -9,22 +9,32 @@ $(function() {
 			$(".clear-relative #icon_prefix").val(' ');
 			$(".clear-relative label").removeClass("active");
 		}
-	});	
-	
-	$('.login-remember').change(function(){
-		if($(this).prop('checked')){
+	});
+
+	/*$('.login-name,.login-pwd').focus(function() {
+		$('.footer').hide();
+	}).blur(function() {
+		$('.footer').show();
+	});*/
+
+	$(window).on('resize', function() {
+		if ($('input:focus').length > 0) {
+			$('.footer').hide();
+		} else {
+			$('.footer').show();
+		}
+	});
+
+
+
+	$('.login-remember').change(function() {
+		if ($(this).prop('checked')) {
 			$('.remember-tip').text('不记住密码');
-		}else{
+		} else {
 			$('.remember-tip').text('记住密码');
 		}
 	});
 
-	$('.login-name,.login-pwd').focus(function () {
-		$('.footer').hide();
-	}).blur(function () {
-		$('.footer').show();
-	});
-	
 	// 登录
 	$('.login-btn').click(function() {
 		callServ('http://i.tpooo.net/api/wap/login', {
