@@ -18,6 +18,12 @@ $(function() {
 			$('.remember-tip').text('记住密码');
 		}
 	});
+
+	$('.login-name,.login-pwd').focus(function () {
+		$('.footer').hide();
+	}).blur(function () {
+		$('.footer').show();
+	});
 	
 	// 登录
 	$('.login-btn').click(function() {
