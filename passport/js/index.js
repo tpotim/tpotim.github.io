@@ -28,11 +28,11 @@ $(function() {
 
 
 	$('.login-remember').change(function() {
-		if ($(this).prop('checked')) {
+		/*if ($(this).prop('checked')) {
 			$('.remember-tip').text('不记住密码');
 		} else {
 			$('.remember-tip').text('记住密码');
-		}
+		}*/
 	});
 
 	// 登录
