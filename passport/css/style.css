@@ -1,4 +1,4 @@
-/*! custom style */
+﻿/*! custom style */
 *{
     padding:0;
     margin:0;
@@ -188,6 +188,7 @@ input[type=text].valid,input[type=password].valid,input[type=tel].valid{
 }
 .remember-tip{
 	margin-left:7px;
+padding-right: 80px;
 }
 .get-code{
     display: block;
