@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <title>找回密码</title>
+        <link type="text/css" rel="stylesheet" href="dist/materialize/css/materialize.min.css" />
+        <link rel="stylesheet" href="dist/icomoon/style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="dist/jquery/jquery-1.11.2.min.js"></script>
+    		<script src="dist/materialize/js/materialize.min.js"></script>
+    		<script src="js/chgPwd.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row row-margin-bottom-no row-margin-positive">
+                <div class="col s12 no-padding">
+                    <h1 class="top-title-white-bj"><span>忘记密码</span><a href="#"><i class="icon-jiantou"></i></a></h1>
+                </div>
+            </div>
+            <div class="row row-margin-positive">
+                
+                <div class="input-field col s12 clear-relative row-margin-top-one">
+                    <i class="icon-key prefix"></i>
+                    <input id="password" type="password" class="validate new-pwd">
+                    <label for="password">密码</label>
+                    <div class="text-white">6~20个字符</div>
+                </div>
+            </div>
+            <div class="row center-align row-margin-positive">
+              <div class="col s12">
+                <button class="btn form-control-orange waves-effect waves-light chg-pwd-submit-btn" type="button" name="action">重置密码</button>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>
