@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>注册</title>
+		
+		<link rel="stylesheet" href="dist/icomoon/style.css">
+		<link rel="stylesheet" href="css/style.all.min.css">
+		<script src="js/vendor.js"></script>
+		<script src="js/reg.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row row-margin-bottom-no row-margin-positive">
+				<div class="col s12 no-padding">
+					<h1 class="top-title-white-reg"><span>注册</span><a href="#"><i class="icon-jiantou"></i></a></h1>
+				</div>
+			</div>
+			<div class="row row-margin-positive">
+				<div class="input-field col s12 clear-relative row-margin-top-one">
+					<i class="icon-phone prefix"></i>
+					<input id="last_name" type="tel" class="validate reg-mobile">
+					<label for="last_name">请输入您的手机号</label>
+					<div class="text-red mobile-invalid-tip hide">您输入的手机号码有误</div>
+				</div>
+				<div class="input-field col s8 clear-relative">
+					<i class="icon-safe prefix"></i>
+					<input id="last_code" type="text" class="validate reg-verify-code">
+					<label for="last_code" class="">请输入验证码</label>
+					<div class="text-red code-invalid-tip hide">请输入有效的验证码</div>
+				</div>
+				<div class="input-field col s4 clear-relative row-margin-top-two">
+					<button value="" class="btn get-code reg-send-code" id="submitBtn">获取验证码</button>
+				</div>
+			</div>
+			<div class="row center-align row-margin-positive">
+				<div class="col s12">
+					<button class="reg-check-btn btn form-control-orange waves-effect waves-light" type="button" name="action">继续</button>
+				</div>
+			</div>
+		</div>
+		<div class="full-layer">
+			<div class="opacity-bg"></div>
+			<img src="images/loading.gif" alt="" class="loading-img" />
+		</div>
+	</body>
+
+</html>
