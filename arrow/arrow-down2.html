@@ -20,81 +20,52 @@
 			body {
 				background-color: #fff;
 			}
-			.arrow-down {
+			.arrow-down-wrap {
 				position: relative;
-				width: 900px;
-				height: 200px;
-				top: -2px;
+				top: -1px;
 				left: 50px;
 			}
 			.arrow-left, .arr-right {
-				display: inline;
+				display: block;
 				position: absolute;
-				width: 100px;
-				height: 100px;
+				width: 14px;
+				height: 14px;
 				background-color: transparent;
 				overflow: hidden;
 			}
-			.arr-left {
-				
-			}
 			.arr-right {
-				left: 100px;
+				left: 14px;
 			}
-			.arr-left-yd {
+			.arr-left-yd, .arr-left-py, .arr-right-yd, .arr-right-py{
 				position: absolute;
-				width: 100px;
-				height: 100px;
+				width: 14px;
+				height: 14px;
 				top: 0px;
 				right: 0;
 				left: 0;
 				bottom: 0;
-				border-bottom: 100px solid transparent;
-				border-right: 100px solid red;
-				content: "";
+				border-bottom: 14px solid transparent;
+			}
+			.arr-left-yd {					
+				border-right: 14px solid #41c7ea;
 			}
 			.arr-left-py {
-				position: absolute;				
-				width: 100px;
-				height: 100px;
-				left: 0;
-				right: 0;
-				top: -1px;
-				bottom: 0;
-				border-bottom: 100px solid transparent;
-				border-right: 100px solid white;
-				content: "";
+				top: -1px;				
+				border-right: 14px solid white;
 			}
-			.arr-right-yd {
-				position: absolute;
-				width: 100px;
-				height: 100px;
-				top: 0px;
-				right: 0;
-				left: 0;
-				bottom: 0;
-				border-bottom: 100px solid transparent;
-				border-left: 100px solid red;
-				content: "";
+			.arr-right-yd{
+				border-left: 14px solid #41c7ea;				
 			}
-			.arr-right-py {
-				position: absolute;
-				width: 100px;
-				height: 100px;
-				left: 0px;
-				right: 0;
-				top: -1px;
-				bottom: 0;
-				border-bottom: 100px solid transparent;
-				border-left: 100px solid white;
-				content: "";
+			.arr-right-py {				
+				top: -1px;				
+				border-left: 14px solid white;				
 			}
 		</style>
 	</head>
 
 	<body>
-		<div style="border:1px solid red;height:80px;width:500px; position:relative;">ccc</div>
-		<div class="arrow-down">
+		<div style="border:1px solid #41c7ea;height:80px;line-height:80px;width:320px; position:relative;text-align: center;">ccc</div>
+		<div class="arrow-down-wrap">
 			<div class='arr-left'>
 				<div class="arr-left-yd"></div>
 				<div class="arr-left-py"></div>				
