@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			*:before,
+			*:after {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			body {
+				background-color: #fff;
+			}
+			.arrow-down {
+				position: relative;
+				width: 900px;
+				height: 200px;
+				top: -2px;
+				left: 50px;
+			}
+			.arrow-left, .arr-right {
+				display: inline;
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: transparent;
+				overflow: hidden;
+			}
+			.arr-left {
+				
+			}
+			.arr-right {
+				left: 100px;
+			}
+			.arr-left-yd {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				top: 0px;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				border-bottom: 100px solid transparent;
+				border-right: 100px solid red;
+				content: "";
+			}
+			.arr-left-py {
+				position: absolute;				
+				width: 100px;
+				height: 100px;
+				left: 0;
+				right: 0;
+				top: -1px;
+				bottom: 0;
+				border-bottom: 100px solid transparent;
+				border-right: 100px solid white;
+				content: "";
+			}
+			.arr-right-yd {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				top: 0px;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				border-bottom: 100px solid transparent;
+				border-left: 100px solid red;
+				content: "";
+			}
+			.arr-right-py {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				left: 0px;
+				right: 0;
+				top: -1px;
+				bottom: 0;
+				border-bottom: 100px solid transparent;
+				border-left: 100px solid white;
+				content: "";
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="border:1px solid red;height:80px;width:500px; position:relative;">ccc</div>
+		<div class="arrow-down">
+			<div class='arr-left'>
+				<div class="arr-left-yd"></div>
+				<div class="arr-left-py"></div>				
+			</div>
+			<div class='arr-right'>
+				<div class="arr-right-yd"></div>
+				<div class="arr-right-py"></div>		
+			</div>
+		</div>
+
+	</body>
+
+</html>
