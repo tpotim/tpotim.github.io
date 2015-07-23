@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+  *{
+     box-sizing:border-box; 
+  }
+  body{
+    background-color: #fff;
+  }
+
+    .arrow-down{
+        position:relative;
+        top:-2px;
+        left:50px;
+    }
+  .arr-left {
+            border: solid 0px red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: transparent;
+            margin-right:100px;
+        }
+
+            .arr-left:before {
+                position: absolute;
+                top: 0px;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                border-bottom: 100px solid transparent;
+                border-right: 100px solid red;
+                content: "";
+            }
+
+            .arr-left:after {
+                position: absolute;
+                left: 0;
+                right: 0; 
+                top: -1px;
+                bottom: 0;
+                border-bottom: 100px solid transparent;
+                border-right: 100px solid white;
+                content: "";
+            }
+  
+.arr-right {
+            border: solid 0px red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+            .arr-right:before {
+                position: absolute;
+                top: 0px;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                border-bottom: 100px solid transparent;
+                border-left: 100px solid red;
+                content: "";
+            }
+
+            .arr-right:after {
+                position: absolute;
+                left: 0px;
+                right: 0;
+                top: -1px;
+                bottom: 0;
+                border-bottom: 100px solid transparent;
+                border-left: 100px solid white;
+                content: "";
+            }
+
+        
+  </style>
+</head>
+<body>
+    <div style="border:1px solid red;height:80px;width:500px; position:relative;"></div>
+    <div class="arrow-down">
+        <span class='arr-left'></span>
+        <span class='arr-right'></span>
+    </div>
+
+</body>
+</html>

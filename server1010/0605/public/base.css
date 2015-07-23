@@ -447,17 +447,17 @@ a{ text-decoration:none;}
 /* end of box-sizing */
 
 
-/* Part 3: 水平排列 */
-.r:before {
+/* Part 3: 栅格 */
+.row:before {
   content: " ";
   display: table;
 }
-.r:after {
+.row:after {
   content: " ";
   display: table;
   clear: both;
 }
-.r .c {
+.row .col {
   float: left;
   position: relative;
   min-height: 1px;
@@ -471,6 +471,9 @@ a{ text-decoration:none;}
   display: table;
   clear: both;
 }
-/* end of 水平排列 */
+/* end of 栅格 */
 
 
+/* Part 4: 常用样式 */
+
+/* end of Part 4 */
